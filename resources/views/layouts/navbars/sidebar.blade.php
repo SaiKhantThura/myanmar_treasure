@@ -83,6 +83,16 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('categories.index') }}">
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Categories') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('products.index') }}">
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Products') }}
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
