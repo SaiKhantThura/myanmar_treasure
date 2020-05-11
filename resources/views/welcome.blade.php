@@ -75,6 +75,25 @@
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
+			  @if (Auth::guest())
+	          <li class="nav-item"><a href="login" class="nav-link">Login</a></li>
+	          <li class="nav-item"><a href="register" class="nav-link">Register</a></li>
+			  @else
+			  <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
+				<div class="dropdown-menu" aria-labelledby="profile">
+					<a class="dropdown-item"  href="{{ route('logout') }}"
+						onclick="event.preventDefault();
+						document.getElementById('logout-form').submit();">
+						{{ __('Logout') }}
+					</a>
+				</div>
+            </li>
+			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+				@csrf
+			</form>
+			@endif
+
 	        </ul>
 	      </div>
 	    </div>
