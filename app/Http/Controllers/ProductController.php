@@ -15,7 +15,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        
+        $products = DB::table('products')
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->select('products.*', 'categories.name as category_name')
+        ->get();
         return view('products.index',compact('products'));
     }
 
@@ -38,7 +42,29 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($this->validatedData());
+        
+        $this->validatedData();
+        $product =new Product;
+        $product->name = request('name');
+        $product->price = request('price');
+        $product->category_id = request('category_id');
+        
+        $image=$request->file('image');
+        $path='';
+        if($image !== null){
+            $filenameWithExt = $image->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $image->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $public_path=public_path().'/assets/img/';
+            $image->move($public_path, $fileNameToStore);
+            $path = '/assets/img/'.$fileNameToStore;
+            $product->image =$path;
+        }else{
+            $product->$image=$path;
+        }
+        
+        $product->save();
         return redirect()->route('products.index')->withStatus(__('New Product created !'));
     }
 
@@ -91,7 +117,10 @@ class ProductController extends Controller
     {
         return request()->validate([
             'name'=>'required',
-            'category_id'=>'required'
+            'category_id'=>'required',
+            'price'=>'required',
+            'image'=>'required'
+
         ]); 
     }
 }

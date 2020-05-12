@@ -36,6 +36,17 @@
                                         </span>
                                     @endif
                                 </div>
+
+                                <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-price">{{ __('Price') }}</label>
+                                    <input type="number" name="price" id="input-price" class="form-control form-control-alternative{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('price') }}" required autofocus>
+
+                                    @if ($errors->has('price'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('price') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                                 
                                 <div class="form-group{{ $errors->has('category_id') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-category_id">{{ __('Category') }}</label>
@@ -48,6 +59,17 @@
                                     @if ($errors->has('category_id'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('category_id') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-image">{{ __('Image') }}</label>
+                                    <input type="file" name="image" id="input-image" class="form-control form-control-alternative{{ $errors->has('image') ? ' is-invalid' : '' }}" placeholder="{{ __('Image') }}" value="{{ old('image') }}" required autofocus>
+
+                                    @if ($errors->has('image'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('image') }}</strong>
                                         </span>
                                     @endif
                                 </div>

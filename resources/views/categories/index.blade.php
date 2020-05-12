@@ -36,9 +36,25 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$category->name}}</td>
                                 <td class="text-right">
-                                    <button class="btn btn-icon btn-primary btn-sm" type="button">
-                                        <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
-                                    </button>
+                                    <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('categories.edit',$category->id)}}">
+                                        <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>     
+                                    </a>  
+                                    <form
+                                            method="POST"
+                                            action="{{route('categories.destroy',$category->id)}}"
+                                            style="display: inline-block;"
+                                        >
+                                            @csrf @method('DELETE')
+    
+                                            <button
+                                                type="submit"
+                                                rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon"
+                                                onclick="return confirm('Are You Confirm')"
+                                            >
+                                            <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
+                                            </button>
+                                    </form>
+
                                 </td>
                             </tr>
                             @endforeach

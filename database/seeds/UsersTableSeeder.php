@@ -20,7 +20,6 @@ class UsersTableSeeder extends Seeder
         $user->email_verified_at = now();
         $user->password = Hash::make('admin123') ;
         $user->save();
-
         $user->assignRole('admin');
     }
 }
