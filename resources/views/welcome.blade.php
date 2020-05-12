@@ -6,7 +6,7 @@
 @section('slider_area')
 <section id="home-section" class="hero">
 	<div class="home-slider owl-carousel">
-		<div class="slider-item" style="background-image: url(vegefoods/images/bg_1.jpg);">
+		<div class="slider-item" style="background-image: url(vegefoods/images/contents/1.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 
-		<div class="slider-item" style="background-image: url(vegefoods/images/bg_2.jpg);">
+		<div class="slider-item" style="background-image: url(vegefoods/images/contents/2.png);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
@@ -87,8 +87,7 @@
 			<div class="col-md-8">
 				<div class="row">
 					<div class="col-md-6 order-md-last align-items-stretch d-flex">
-						<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex"
-							style="background-image: url(vegefoods/images/category.jpg);">
+						<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex">
 							<div class="text text-center">
 								<h2>Products</h2>
 								<p><a href="#" class="btn btn-primary">Shop now</a></p>
@@ -97,13 +96,13 @@
 					</div>
 					<div class="col-md-6">
 						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end"
-							style="background-image: url(vegefoods/images/category-1.jpg);">
+							style="background-image: url(vegefoods/images/contents/3.jpg);">
 							<div class="text px-3 py-1">
 								<h2 class="mb-0"><a href="#">Men Clothings</a></h2>
 							</div>
 						</div>
 						<div class="category-wrap ftco-animate img d-flex align-items-end"
-							style="background-image: url(vegefoods/images/category-2.jpg);">
+							style="background-image: url(vegefoods/images/contents/4.jpg);">
 							<div class="text px-3 py-1">
 								<h2 class="mb-0"><a href="#">Women Clothings</a></h2>
 							</div>
@@ -114,13 +113,13 @@
 
 			<div class="col-md-4">
 				<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end"
-					style="background-image: url(vegefoods/images/category-3.jpg);">
+					style="background-image: url(vegefoods/images/contents/5.jpg);">
 					<div class="text px-3 py-1">
 						<h2 class="mb-0"><a href="#">Accessories</a></h2>
 					</div>
 				</div>
 				<div class="category-wrap ftco-animate img d-flex align-items-end"
-					style="background-image: url(vegefoods/images/category-4.jpg);">
+					style="background-image: url(vegefoods/images/contents/6.jpg);">
 					<div class="text px-3 py-1">
 						<h2 class="mb-0"><a href="#">Dried</a></h2>
 					</div>

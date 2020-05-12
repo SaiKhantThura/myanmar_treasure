@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
+	<title>Myanmar Treasure</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -48,7 +48,7 @@
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">Shop</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="shop.html">Shop</a>
+							<a class="dropdown-item" href="shop">Shop</a>
 							<a class="dropdown-item" href="wishlist.html">Wishlist</a>
 							<a class="dropdown-item" href="product-single.html">Single Product</a>
 							<a class="dropdown-item" href="cart.html">Cart</a>
@@ -58,7 +58,7 @@
 					<li class="nav-item"><a href="about" class="nav-link">About</a></li>
 					<li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
 					<li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-					<li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span
+					<li class="nav-item cta cta-colored"><a href="cart" class="nav-link"><span
 								class="icon-shopping_cart"></span>[0]</a></li>
 					@if (Auth::guest())
 					<li class="nav-item"><a href="login" class="nav-link">Login</a></li>

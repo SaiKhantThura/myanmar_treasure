@@ -28,6 +28,16 @@ Route::get('/blog', function(){
 Route::get('/single_blog', function(){
 	return view('single_blog');
 });
+Route::get('/shop', function(){
+	return view('shop');
+});
+Route::get('/product-single', function(){
+	return view('product-single');
+});
+Route::get('/cart', function(){
+	return view('cart');
+});
+
 
 Auth::routes();
 
