@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -50,6 +51,7 @@ class ProductController extends Controller
         $product->category_id = request('category_id');
         
         $image=$request->file('image');
+        
         $path='';
         if($image !== null){
             $filenameWithExt = $image->getClientOriginalName();
@@ -85,9 +87,15 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $product = DB::table('products')
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->select('products.*', 'categories.name as category_name')
+        ->where('products.id', '=' , $id)
+        ->first();
+        return view('products.edit',compact('product','categories'));
     }
 
     /**
@@ -97,9 +105,32 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validatedData();
+        $product = Product::find($id);
+        $product->name = request('name');
+        $product->price = request('price');
+        $product->category_id = request('category_id');
+        
+        $image=$request->file('image');
+        
+        $path='';
+        if($image !== null){
+            $filenameWithExt = $image->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $image->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $public_path=public_path().'/assets/img/';
+            $image->move($public_path, $fileNameToStore);
+            $path = '/assets/img/'.$fileNameToStore;
+            $product->image =$path;
+        }else{
+            $product->$image=$path;
+        }
+        
+        $product->save();
+        return redirect()->route('products.index')->withStatus(__('New Product created !'));
     }
 
     /**
@@ -108,9 +139,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product -> delete();
+        return redirect()->route('products.index');
     }
 
     public function validatedData()
@@ -119,7 +152,7 @@ class ProductController extends Controller
             'name'=>'required',
             'category_id'=>'required',
             'price'=>'required',
-            'image'=>'required'
+            'image'=>'required',
 
         ]); 
     }

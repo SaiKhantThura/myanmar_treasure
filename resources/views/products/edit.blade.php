@@ -12,9 +12,9 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('products.store') }}" autocomplete="off"  enctype="multipart/form-data">
-                            @csrf
-                            @method('post')
+                        <form method="post" action="{{ route('products.update',$product->id) }}" autocomplete="off"  enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
 
                             @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -28,7 +28,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ old('name',$product->name) }}" value="{{ old('name',$product->name) }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
 
                                 <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-price">{{ __('Price') }}</label>
-                                    <input type="number" name="price" id="input-price" class="form-control form-control-alternative{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('price') }}" required autofocus>
+                                    <input type="number" name="price" id="input-price" class="form-control form-control-alternative{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ old('name',$product->price) }}" value="{{ old('name',$product->price) }}" required autofocus>
 
                                     @if ($errors->has('price'))
                                         <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
                                     <label class="form-control-label" for="input-category_id">{{ __('Category') }}</label>
                                     <select class="form-control" id="exampleFormControlSelect1" name="category_id">
                                         @foreach($categories as $category)
-                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                        <option value="{{$category->id}}" {{$product->category_id == $category->id ? 'selected':''}}>{{$category->name}}</option>
                                         @endforeach
                                     </select>
 

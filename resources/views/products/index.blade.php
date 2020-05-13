@@ -26,8 +26,10 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Image</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Category</th>
+                                <th scope="col">Price</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -35,12 +37,34 @@
                             @foreach ($products as $key => $product)
                             <tr>
                                 <td>{{$key+1}}</td>
+                                <td>
+                                <a href="{{$product->image}}" target="blank">
+                                    <img class="avatar border-gray" src="{{$product->image}}" style="object-fit: cover;" alt="...">
+                                </a>
+                                </td>
                                 <td>{{$product->name}}</td>
-                                <td>{{$product->category->name}}</td>
+                                <td>{{$product->category_name}}</td>
+                                <td>{{$product->price}}</td>
                                 <td class="text-right">
-                                    <button class="btn btn-icon btn-primary btn-sm" type="button">
-                                        <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
-                                    </button>
+                                    <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('products.edit',$product->id)}}">
+                                        <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>     
+                                    </a>  
+                                    <form
+                                            method="POST"
+                                            action="{{route('products.destroy',$product->id)}}"
+                                            style="display: inline-block;"
+                                        >
+                                            @csrf @method('DELETE')
+    
+                                            <button
+                                                type="submit"
+                                                rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon"
+                                                onclick="return confirm('Are You Confirm')"
+                                            >
+                                            <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
+                                            </button>
+                                    </form>
+
                                 </td>
                             </tr>
                             @endforeach
