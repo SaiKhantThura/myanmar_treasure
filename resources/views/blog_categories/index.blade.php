@@ -9,10 +9,10 @@
                 <div class="card-header border-0">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Categories</h3>
+                            <h3 class="mb-0">Blog Categories</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{route('categories.create')}}" class="btn btn-sm btn-primary"
+                            <a href="{{route('blogcaregories.create')}}" class="btn btn-sm btn-primary"
                                 >Add</a
                             >
                         </div>
@@ -31,17 +31,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $key => $category)
+                            @foreach ($bcs as $key => $bc)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$category->name}}</td>
+                                <td>{{$bc->name}}</td>
                                 <td class="text-right">
-                                    <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('categories.edit',$category->id)}}">
+                                    <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('blogcaregories.edit',$bc->id)}}">
                                         <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>     
                                     </a>  
                                     <form
                                             method="POST"
-                                            action="{{route('categories.destroy',$category->id)}}"
+                                            action="{{route('blogcaregories.destroy',$bc->id)}}"
                                             style="display: inline-block;"
                                         >
                                             @csrf @method('DELETE')

@@ -49,6 +49,9 @@ Route::group(['middleware' => ['role:admin']], function () {
 	
 	Route::resource('categories', 'CategoryController');
 	Route::resource('products', 'ProductController');
+	Route::resource('blogcaregories', 'BlogCategoryController');
+	Route::resource('blogs', 'BlogController');
+	
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
