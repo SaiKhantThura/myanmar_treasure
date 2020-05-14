@@ -78,11 +78,9 @@
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading">Categories</h3>
                     <ul class="categories">
-                        <li><a href="#">Things to do</a></li>
-                        <li><a href="#">Hotels</a></li>
-                        <li><a href="#">Traditional Curry </a></li>
-                        <li><a href="#">Myanmar Snacks </a></li>
-                        <li><a href="#">Drinks </a></li>
+                        @foreach($blog_categories as $category)
+                            <li><a href="#">{{$category->name}} [{{count($category->blogs)}}]</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

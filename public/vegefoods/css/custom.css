@@ -7,3 +7,10 @@
 .prd {
     margin-top: 170px;
 }
+
+.product-category li a {
+    cursor: pointer;
+}
+.product-category li a:hover {
+    cursor: pointer;
+}

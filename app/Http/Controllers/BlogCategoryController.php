@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog_Category;
+use App\BlogCategory;
 use Illuminate\Http\Request;
 
 class BlogCategoryController extends Controller
@@ -14,7 +14,7 @@ class BlogCategoryController extends Controller
      */
     public function index()
     {
-        $bcs = Blog_Category::all();
+        $bcs = BlogCategory::all();
         return view('blog_categories.index',compact('bcs'));
     }
 
@@ -36,17 +36,17 @@ class BlogCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        Blog_Category::create($this->validatedData());
+        BlogCategory::create($this->validatedData());
         return redirect()->route('blogcaregories.index')->withStatus(__('New Blog category created !'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Blog_Category  $blog_Category
+     * @param  \App\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog_Category $blog_Category)
+    public function show(BlogCategory $blogCategory)
     {
         //
     }
@@ -54,12 +54,12 @@ class BlogCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Blog_Category  $blog_Category
+     * @param  \App\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(BlogCategory $blogCategory)
     {
-        $bc = Blog_Category::find($id);
+        $bc = BlogCategory::find($id);
         return view('blog_categories.edit',compact('bc'));
     }
 
@@ -67,13 +67,13 @@ class BlogCategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Blog_Category  $blog_Category
+     * @param  \App\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, BlogCategory $blogCategory)
     {
         $this->validatedData();
-        $bc = Blog_Category::Find($id);
+        $bc = BlogCategory::Find($id);
         $bc->name = request("name");
         $bc->save();
         return redirect()->route('blogcaregories.index');
@@ -82,15 +82,16 @@ class BlogCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Blog_Category  $blog_Category
+     * @param  \App\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(BlogCategory $blogCategory)
     {
-        $bc = Blog_Category::Find($id);
+        $bc = BlogCategory::Find($id);
         $bc->delete();
         return redirect()->route('blogcaregories.index');
     }
+
     public function validatedData()
     {
         return request()->validate([

@@ -12,5 +12,6 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
-require('./components/Cart');
+require('./components/CartCount/Index');
+require('./components/CartContainer/Index');
+require('./components/Shop/index');

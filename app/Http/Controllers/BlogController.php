@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
-use App\Blog_Category;
+use App\BlogCategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -17,8 +17,8 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = DB::table('blogs')
-        ->join('blog__categories', 'blog__categories.id', '=', 'blogs.blog_category_id')
-        ->select('blogs.*', 'blog__categories.name as name')
+        ->join('blog_categories', 'blog_categories.id', '=', 'blogs.blog_category_id')
+        ->select('blogs.*', 'blog_categories.name as name')
         ->get();
         return view('blogs.index',compact('blogs'));
     }
@@ -30,7 +30,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $bcs = Blog_Category::all();
+        $bcs = BlogCategory::all();
         return view('blogs.create',compact('bcs'));
     }
 
@@ -87,10 +87,10 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        $bcs = Blog_Category::all();
+        $bcs = BlogCategory::all();
         $blogs = DB::table('blogs')
-        ->join('blog__categories', 'blog__categories.id', '=', 'blogs.blog_category_id')
-        ->select('blogs.*', 'blog__categories.name as name')
+        ->join('blog_categories', 'blog_categories.id', '=', 'blogs.blog_category_id')
+        ->select('blogs.*', 'blog_categories.name as name')
         ->where('blogs.id', '=' , $id)
         ->first();
         return view('blogs.edit',compact('blogs','bcs'));

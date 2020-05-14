@@ -8,8 +8,8 @@ class Blog extends Model
 {
     protected $guarded = [];
 
-    public function blog_category()
+    public function blogCategory()
     {
-        return $this->hasMany('App\Blog_Category');
+        return $this->hasMany('App\BlogCategory');
     } 
 }
