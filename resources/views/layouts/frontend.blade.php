@@ -29,6 +29,7 @@
 	<link rel="stylesheet" href="vegefoods/css/flaticon.css">
 	<link rel="stylesheet" href="vegefoods/css/icomoon.css">
 	<link rel="stylesheet" href="vegefoods/css/style.css">
+	<link rel="stylesheet" href="vegefoods/css/custom.css">
 </head>
 
 <body class="goto-here">

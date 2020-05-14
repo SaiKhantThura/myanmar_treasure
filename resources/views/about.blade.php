@@ -69,7 +69,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="10000">0</strong>
+                                <strong class="number" data-number="1">0</strong>
                                 <span>Happy Customers</span>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="100">0</strong>
+                                <strong class="number" data-number="1">0</strong>
                                 <span>Branches</span>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="1000">0</strong>
+                                <strong class="number" data-number="1">0</strong>
                                 <span>Partner</span>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="100">0</strong>
+                                <strong class="number" data-number="1">0</strong>
                                 <span>Awards</span>
                             </div>
                         </div>

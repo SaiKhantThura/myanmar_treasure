@@ -1,0 +1,9 @@
+.img-prod img{
+    width: 254px;
+    height: 210px;
+    object-fit: cover;
+}
+
+.prd {
+    margin-top: 170px;
+}
