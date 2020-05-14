@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Blog_Category extends Model
 {
     protected $guarded = [];
 
-    public function products()
+    public function blogs()
     {
-        return $this->hasMany('App\Products');
+        return $this->hasMany('App\Blogs');
     } 
 }

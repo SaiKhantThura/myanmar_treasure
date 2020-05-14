@@ -19,11 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-                style="background-image: url(vegefoods/images/about.jpg);">
-                <a href="https://vimeo.com/45830194"
-                    class="icon popup-vimeo d-flex justify-content-center align-items-center">
-                    <span class="icon-play"></span>
-                </a>
+                style="background-image: url(vegefoods/images/contents/7.jpg);">
             </div>
             <div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
                 <div class="heading-section-bold mb-4 mt-md-5">
@@ -73,7 +69,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="10000">0</strong>
+                                <strong class="number" data-number="1">0</strong>
                                 <span>Happy Customers</span>
                             </div>
                         </div>
@@ -81,7 +77,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="100">0</strong>
+                                <strong class="number" data-number="1">0</strong>
                                 <span>Branches</span>
                             </div>
                         </div>
@@ -89,7 +85,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="1000">0</strong>
+                                <strong class="number" data-number="1">0</strong>
                                 <span>Partner</span>
                             </div>
                         </div>
@@ -97,7 +93,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="100">0</strong>
+                                <strong class="number" data-number="1">0</strong>
                                 <span>Awards</span>
                             </div>
                         </div>

@@ -29,7 +29,7 @@
     		<div class="row">
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single" class="img-prod"><img class="img-fluid" src="/vegefoods/images/product-1.jpg" alt="Colorlib Template">
+    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi2.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
@@ -57,7 +57,7 @@
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/product-2.jpg" alt="Colorlib Template">
+    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi3.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
@@ -85,7 +85,7 @@
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/product-3.jpg" alt="Colorlib Template">
+    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi4.jpg" alt="Colorlib Template">
 	    					<div class="overlay"></div>
 	    				</a>
     					<div class="text py-3 pb-4 px-3 text-center">
@@ -113,7 +113,7 @@
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/product-4.jpg" alt="Colorlib Template">
+    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi5.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
@@ -143,7 +143,7 @@
 
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/product-5.jpg" alt="Colorlib Template">
+    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi1.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
@@ -171,7 +171,7 @@
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/product-6.jpg" alt="Colorlib Template">
+    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi2.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
@@ -199,7 +199,7 @@
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/product-7.jpg" alt="Colorlib Template">
+    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi2.jpg" alt="Colorlib Template">
 	    					<div class="overlay"></div>
 	    				</a>
     					<div class="text py-3 pb-4 px-3 text-center">
@@ -227,7 +227,7 @@
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/product-8.jpg" alt="Colorlib Template">
+    					<a href="product-single" class="img-prod"><img class="img-fluid" src="vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi2.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">

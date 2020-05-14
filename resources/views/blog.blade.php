@@ -22,7 +22,7 @@
                     <div class="col-md-12 d-flex ftco-animate">
                         <div class="blog-entry align-self-stretch d-md-flex">
                             <a href="single_blog" class="block-20"
-                                style="background-image: url('vegefoods/images/image_4.jpg');">
+                                style="background-image: url('vegefoods/images/productss/Hotels/Bagan Thende Hotel(old bagan).jpg');">
                             </a>
                             <div class="text d-block pl-md-4">
                                 

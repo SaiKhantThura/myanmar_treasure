@@ -29,6 +29,7 @@
 	<link rel="stylesheet" href="vegefoods/css/flaticon.css">
 	<link rel="stylesheet" href="vegefoods/css/icomoon.css">
 	<link rel="stylesheet" href="vegefoods/css/style.css">
+	<link rel="stylesheet" href="vegefoods/css/custom.css">
 </head>
 
 <body class="goto-here">
@@ -51,7 +52,7 @@
 							<a class="dropdown-item" href="shop">Shop</a>
 							<a class="dropdown-item" href="wishlist.html">Wishlist</a>
 							<a class="dropdown-item" href="product-single.html">Single Product</a>
-							<a class="dropdown-item" href="cart.html">Cart</a>
+							<a class="dropdown-item" href="cart">Cart</a>
 							<a class="dropdown-item" href="checkout.html">Checkout</a>
 						</div>
 					</li>

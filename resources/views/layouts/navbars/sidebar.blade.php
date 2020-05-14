@@ -84,6 +84,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('blogs.index') }}">
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Blogs') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('blogcaregories.index') }}">
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Blog Categories') }}
+                    </a>
+                </li>
+            
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('categories.index') }}">
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Categories') }}
                     </a>
@@ -93,7 +104,7 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Products') }}
                     </a>
                 </li>
-            </ul>
+            </ul> 
         </div>
     </div>
 </nav>

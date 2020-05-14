@@ -9,10 +9,10 @@
                 <div class="card-header border-0">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Categories</h3>
+                            <h3 class="mb-0">Blogs</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{route('categories.create')}}" class="btn btn-sm btn-primary"
+                            <a href="{{route('blogs.create')}}" class="btn btn-sm btn-primary"
                                 >Add</a
                             >
                         </div>
@@ -26,22 +26,32 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Name</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Blog Category</th>
+                                <th scope="col">description</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $key => $category)
+                            @foreach ($blogs as $key => $blog)
                             <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$category->name}}</td>
+                                <td>
+                                <a href="{{$blog->image}}" target="blank">
+                                    <img class="avatar border-gray" src="{{$blog->image}}" style="object-fit: cover;" alt="...">
+                                </a>
+                                </td>
+                                <td>{{$blog->title}}</td>
+                                <td>{{$blog->name}}</td>
+                                <td>{{$blog->description}}</td>
                                 <td class="text-right">
-                                    <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('categories.edit',$category->id)}}">
+                                    <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('blogs.edit',$blog->id)}}">
                                         <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>     
                                     </a>  
                                     <form
                                             method="POST"
-                                            action="{{route('categories.destroy',$category->id)}}"
+                                            action="{{route('blogs.destroy',$blog->id)}}"
                                             style="display: inline-block;"
                                         >
                                             @csrf @method('DELETE')
@@ -74,8 +84,3 @@
     @include('layouts.footers.auth')
     </div>
 @endsection
-
-@push('js')
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
-    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
-@endpush
