@@ -199,4 +199,5 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="vegefoods/js/google-map.js"></script>
 	<script src="vegefoods/js/main.js"></script>
+	<script src="js/app.js"></script>
 </body>
