@@ -55965,17 +55965,21 @@ var Shop = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      localStorage.setItem('myData', this.state.active);
+      this.setState({
+        isLoading: true
+      });
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/categories/all').then(function (response) {
         _this2.setState({
-          categories: response.data
+          categories: response.data,
+          isLoading: false
         });
       }).then(function (err) {
         console.log(err);
       });
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/shop-products?category=all').then(function (response) {
         _this2.setState({
-          products: response.data
+          products: response.data,
+          isLoading: false
         });
       }).then(function (err) {
         console.log(err);

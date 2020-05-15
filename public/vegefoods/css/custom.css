@@ -14,3 +14,7 @@
 .product-category li a:hover {
     cursor: pointer;
 }
+
+.buy-now{
+    cursor: pointer;
+}
