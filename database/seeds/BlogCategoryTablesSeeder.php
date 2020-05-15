@@ -13,7 +13,7 @@ class BlogCategoryTablesSeeder extends Seeder
     {
         DB::table('blog_categories')->insert([
             [
-                "name"=> 'Thinks to do',
+                "name"=> 'Things to do',
             ],
             [
                 "name"=> 'Hotels',

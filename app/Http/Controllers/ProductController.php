@@ -49,6 +49,7 @@ class ProductController extends Controller
         $product->name = request('name');
         $product->price = request('price');
         $product->category_id = request('category_id');
+        $product->description = request('description');
         
         $image=$request->file('image');
         
@@ -112,7 +113,7 @@ class ProductController extends Controller
         $product->name = request('name');
         $product->price = request('price');
         $product->category_id = request('category_id');
-        
+        $product->description = request('description');
         $image=$request->file('image');
         
         $path='';

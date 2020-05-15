@@ -29,6 +29,7 @@
                                 <th scope="col">Image</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Category</th>
+                                <th scope="col">Description</th>
                                 <th scope="col">Price</th>
                                 <th scope="col"></th>
                             </tr>
@@ -44,6 +45,7 @@
                                 </td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->category_name}}</td>
+                                <td>{{$product->description}}</td>
                                 <td>{{$product->price}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('products.edit',$product->id)}}">
