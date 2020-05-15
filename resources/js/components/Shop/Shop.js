@@ -15,17 +15,14 @@ class Shop extends Component {
     }
     //WARNING! To be deprecated in React v17. Use componentDidMount instead.
     componentDidMount() {
-        this.setState({
-            isLoading:true
-        });
         Axios.get('/categories/all').then(response =>{
-            this.setState({categories:response.data,isLoading:false});
+            this.setState({categories:response.data});
         }).then(err=>{
             console.log(err);
         })
 
         Axios.get('/shop-products?category=all').then(response =>{
-            this.setState({products:response.data,isLoading:false});
+            this.setState({products:response.data});
         }).then(err=>{
             console.log(err);
         })
