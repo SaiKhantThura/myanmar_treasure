@@ -19,22 +19,31 @@
         <div class="row">
             <div class="col-lg-8 ftco-animate">
                 <div class="row">
-                    <div class="col-md-12 d-flex ftco-animate">
-                        <div class="blog-entry align-self-stretch d-md-flex">
-                            <a href="single_blog" class="block-20"
-                                style="background-image: url('vegefoods/images/productss/Hotels/Bagan Thende Hotel(old bagan).jpg');">
-                            </a>
-                            <div class="text d-block pl-md-4">
-                                
-                                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                                        blind texts</a></h3>
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                    Consonantia, there live the blind texts.</p>
-                                <p><a href="single_blog" class="btn btn-primary py-2 px-3">Read more</a></p>
+                    @foreach($blogs as $blog)
+                        <div class="col-md-12 d-flex ftco-animate">
+                            <div class="blog-entry align-self-stretch d-md-flex">
+                                <a href="single_blog" class="block-20"
+                                    style="background-image: url('{{$blog->image}}');">
+                                </a>
+                                <div class="text d-block pl-md-4">
+                                    
+                                    <h3 class="heading">
+                                        <a href="#">
+                                            {{$blog->title}}
+                                        </a>
+                                    </h3>
+                                    <h6>
+                                        <b>Type :</b>{{$blog->name}}
+                                    </h6>
+                                    <p>
+                                        {{$blog->description}}
+                                    </p>
+                                    <p><a href="single_blog" class="btn btn-primary py-2 px-3">Read more</a></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 d-flex ftco-animate">
+                    @endforeach
+                    <!-- <div class="col-md-12 d-flex ftco-animate">
                         <div class="blog-entry align-self-stretch d-md-flex">
                             <a href="single_blog" class="block-20"
                                 style="background-image: url('vegefoods/images/image_5.jpg');">
@@ -63,7 +72,7 @@
                                 <p><a href="single_blog" class="btn btn-primary py-2 px-3">Read more</a></p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div> <!-- .col-md-8 -->
             <div class="col-lg-4 sidebar ftco-animate">

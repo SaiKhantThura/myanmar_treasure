@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\BlogCategory;
-
+use App\Blog;
+use Illuminate\Support\Facades\DB;
 class FrontendController extends Controller
 {
     public function index()
@@ -24,7 +25,11 @@ class FrontendController extends Controller
     public function blog()
     {
         $blog_categories = BlogCategory::all();
-        return view('blog',compact('blog_categories'));
+        $blogs = DB::table('blogs')
+        ->join('blog_categories', 'blog_categories.id', '=', 'blogs.blog_category_id')
+        ->select('blogs.*', 'blog_categories.name as name')
+        ->get();
+        return view('blog',compact('blog_categories','blogs'));
     }
     public function singleBlog()
     {

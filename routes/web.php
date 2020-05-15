@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontendController@index');
 Route::get('about', 'FrontendController@about');
 Route::get('contact', 'FrontendController@contact');
+
 Route::get('blog', 'FrontendController@blog');
+
 Route::get('single_blog','FrontendController@singleBlog');
 Route::get('shop', 'FrontendController@shop');
 Route::get('product-single/{product}', 'FrontendController@productSingle');
