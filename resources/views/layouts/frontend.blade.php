@@ -36,39 +36,62 @@
 	<!-- Nav -->
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Myanmar Treasure</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
+			<div class="row align-items-center no-gutters">
+				<div class="col-xl-3 col-lg-2">
+					<a class="navbar-brand" href="index.html">Myanmar Treasure</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+						aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="oi oi-menu"></span> Menu
+					</button>
+				</div>
+				<div class="col-xl-7 col-lg-7">
+					<div class="collapse navbar-collapse" id="ftco-nav">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+							<li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
+							<li class="nav-item"><a href="{{url('shop')}}" class="nav-link">Shop</a></li>
+							<li class="nav-item"><a href="{{url('blog')}}" class="nav-link">Blog</a></li>
+							<li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
+							<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
+										class="icon-shopping_cart"></span>[<span id="cartCount"></span>]</a></li>
+							<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
+								class="ion-ios-heart"></span>[<span id="cartCount"></span>]</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-2 col-lg-2 d-none d-lg-block">
+					<div class="collapse navbar-collapse" id="ftco-nav">
+						<ul class="navbar-nav ml-auto">
+							@if (Auth::guest())
+							<li class="nav-item"><a href="{{url('login')}}" class="nav-link">Login</a></li>
+							<li class="nav-item"><a href="{{url('register')}}" class="nav-link">Register</a></li>
+							@else
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="profile" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
+								<div class="dropdown-menu" aria-labelledby="profile">
+									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+								document.getElementById('logout-form').submit();">
+										{{ __('Logout') }}
+									</a>
+								</div>
+							</li>
+							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+								@csrf
+							</form>
+							@endif
+						</ul>
+					</div>
+				</div>
+			</div>
+			
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-					<li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
-					<li class="nav-item"><a href="{{url('shop')}}" class="nav-link">Shop</a></li>
-					<li class="nav-item"><a href="{{url('blog')}}" class="nav-link">Blog</a></li>
-					<li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
-					<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
-								class="icon-shopping_cart"></span>[<span id="cartCount"></span>]</a></li>
-					@if (Auth::guest())
-					<li class="nav-item"><a href="{{url('login')}}" class="nav-link">Login</a></li>
-					<li class="nav-item"><a href="{{url('register')}}" class="nav-link">Register</a></li>
-					@else
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="profile" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
-						<div class="dropdown-menu" aria-labelledby="profile">
-							<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-						document.getElementById('logout-form').submit();">
-								{{ __('Logout') }}
-							</a>
-						</div>
-					</li>
-					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-						@csrf
-					</form>
-					@endif
+			
+				
+					
+
+					
+					
 
 				</ul>
 			</div>
