@@ -31,9 +31,14 @@ class FrontendController extends Controller
         ->get();
         return view('blog',compact('blog_categories','blogs'));
     }
-    public function singleBlog()
+    public function singleBlog($id)
     {
-        return view('single_blog');
+        $blog = DB::table('blogs')
+        ->join('blog_categories', 'blog_categories.id', '=', 'blogs.blog_category_id')
+        ->select('blogs.*', 'blog_categories.name as name')
+        ->where('blogs.id', '=' , $id)
+        ->first();
+        return view('single_blog',compact('blog'));
     }
     public function shop()
     {

@@ -13,7 +13,7 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                "name"=> 'Longyi',
+                "name"=> 'Longyi 1',
                 "price"=> '20000',
                 "image"=> '/vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi1.jpg',
                 "description"=> 'Myin Phyu Longyi',
@@ -25,6 +25,20 @@ class ProductSeeder extends Seeder
                 "image"=> '/vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi2.jpg',
                 "description"=> 'Myin Phyu Longyi',
                 "category_id"=> '1',
+            ],
+            [
+                "name"=> 'Longyi 1',
+                "price"=> '20000',
+                "image"=> '/vegefoods/images/productss/Bagan-accessories/Women Clothing/Longyi1.jpg',
+                "description"=> 'Myin Phyu Longyi',
+                "category_id"=> '2',
+            ],
+            [
+                "name"=> 'Longyi 2',
+                "price"=> '15000',
+                "image"=> '/vegefoods/images/productss/Bagan-accessories/Women Clothing/Longyi4.jpg',
+                "description"=> 'Myin Phyu Longyi',
+                "category_id"=> '2',
             ],
             [
                 "name"=> 'Mote late pyar',
@@ -45,6 +59,13 @@ class ProductSeeder extends Seeder
                 "price"=> '500',
                 "image"=> '/vegefoods/images/productss/Myamar-food/Drinks/khaung yay/khaung yay.jpg',
                 "description"=> 'Traditional Myanmar Salad make with tea leaf and fried beans',
+                "category_id"=> '4',
+            ],
+            [
+                "name"=> 'Rice Wine',
+                "price"=> '2500',
+                "image"=> '/vegefoods/images/productss/Myamar-food/Drinks/rice wine/rice wine.jpg',
+                "description"=> 'Local Rice wine',
                 "category_id"=> '4',
             ],
 

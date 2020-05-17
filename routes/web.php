@@ -19,7 +19,7 @@ Route::get('contact', 'FrontendController@contact');
 
 Route::get('blog', 'FrontendController@blog');
 
-Route::get('single_blog','FrontendController@singleBlog');
+Route::get('/single_blog/{blog}','FrontendController@singleBlog')->name('single_blog');
 Route::get('shop', 'FrontendController@shop');
 Route::get('product-single/{product}', 'FrontendController@productSingle');
 Route::get('cart', 'FrontendController@cart');

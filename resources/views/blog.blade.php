@@ -22,7 +22,7 @@
                     @foreach($blogs as $blog)
                         <div class="col-md-12 d-flex ftco-animate">
                             <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="single_blog" class="block-20"
+                                <a href="{{route('single_blog',$blog->id)}}" class="block-20"
                                     style="background-image: url('{{$blog->image}}');">
                                 </a>
                                 <div class="text d-block pl-md-4">
@@ -38,7 +38,7 @@
                                     <p>
                                         {{$blog->description}}
                                     </p>
-                                    <p><a href="single_blog" class="btn btn-primary py-2 px-3">Read more</a></p>
+                                    <p><a href="{{route('single_blog',$blog->id)}}" class="btn btn-primary py-2 px-3">Read more</a></p>
                                 </div>
                             </div>
                         </div>
