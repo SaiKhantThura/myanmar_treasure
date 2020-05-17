@@ -41,12 +41,12 @@
                     <div class="card-header bg-transparent pb-5">
                         <div class="text-center"><a class="navbar-brand " style="word-spacing: 10px;" href="/">Myanmar Treasure</a></div>
 
-                        <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Sign up with') }}</small></div>
+                        <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Create Account') }}</small></div>
                         
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
-                            <small>{{ __('Or sign up with credentials') }}</small>
+                            <small><a href="{{ route('login') }}">{{ __('Sign in') }}</a> {{ __('Or sign up with credentials') }}</small>
                         </div>
                         <form role="form" method="POST" action="{{ route('register') }}">
                             @csrf
@@ -98,9 +98,7 @@
                                     <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
                                 </div>
                             </div>
-                            <div class="text-muted font-italic">
-                                <small>{{ __('password strength') }}: <span class="text-success font-weight-700">{{ __('strong') }}strong</span></small>
-                            </div>
+                            
                             <div class="row my-4">
                                 <div class="col-12">
                                     <div class="custom-control custom-control-alternative custom-checkbox">

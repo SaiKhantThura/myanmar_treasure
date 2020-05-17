@@ -40,7 +40,7 @@
                 <div class="card bg-white shadow border-0">
                     <div class="card-header bg-transparent pb-5">
                         <div class="text-center"><a class="navbar-brand " style="word-spacing: 10px;" href="/">Myanmar Treasure</a></div>
-                        <div class="text-muted text-center mt-2 mb-3"><small>{{ __('Sign in Form') }}</small></div>
+                        
                         <!-- <div class="btn-wrapper text-center">
                             <a href="#" class="btn btn-neutral btn-icon">
                                 <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/github.svg"></span>

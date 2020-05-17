@@ -78,3 +78,51 @@
     background-color: #DB9A64;
     opacity: 0.9;
   }
+  .account{
+      margin-left: 100px;
+  }
+
+  .newreceipt{
+    background-image: url('../images/Login\ background.png') ;
+    padding: 10px 0px;
+    min-height: 785px;
+    font-family: "Poppins", sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+  }
+  .newreceiptform{
+      opacity: 0.8;
+    padding: 0px 30px;
+      width: 100%;
+      border: 0px solid;
+      padding-bottom: 20px;
+      background: #fff;
+      border-radius: 10px;
+      /* font-family: "Poppins", sans-serif; */
+  }
+  .newreceiptform p{
+    margin-top: 50px;
+    /* font-family: "Poppins", sans-serif; */
+  }
+  .newreceiptform h3{
+    margin-top: 20px;
+    display: block;
+    /* font-family: "Poppins", sans-serif; */
+  }
+  .newsecond span{
+    font-size: 15px;
+  }
+  .newsecond h4{
+    font-weight: 600;
+    font-size: 14px;
+    /* font-family: "Poppins", sans-serif; */
+  }
+  .newthird h5{
+    font-size: 14px;
+    /* font-family: "Poppins", sans-serif; */
+  }
+  .navbar-brand{
+      word-spacing: 10px;
+      
+  }

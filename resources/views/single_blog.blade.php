@@ -2,7 +2,7 @@
 
 <!-- slider_area_start  -->
 @section('slider_area')
-<div class="hero-wrap hero-bread" style="background-image: url('vegefoods/images/productss/thingstodo/checkout.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('vegefoods/images/Blog.jpg');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
@@ -27,10 +27,7 @@
                 <p>
                     <img src="vegefoods/images/image_1.jpg" alt="" class="img-fluid">
                 </p>
-                <p>Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt
-                    doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo
-                    eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis
-                    ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!</p>
+                
 
             </div> <!-- .col-md-8 -->
             <div class="col-lg-4 sidebar ftco-animate">

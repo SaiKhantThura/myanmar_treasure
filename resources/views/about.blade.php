@@ -3,7 +3,7 @@
 <!-- slier_area_start -->
 
 @section('slider_area')
-<div class="hero-wrap hero-bread" style="background-image: url('vegefoods/images/contents/about.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('vegefoods/images/contents/About.jpg');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">

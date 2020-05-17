@@ -30,6 +30,13 @@ Route::get('/shop-products', 'FrontendController@getProducts');
 
 Route::resource('orders', 'OrderController');
 
+Route:: get('/receipt', function (){
+	return view('receipt');
+});
+Route:: get('/wishlist', function(){
+	return view('wishlist');
+});
+
 Auth::routes();
 
 Route::group(['middleware' => ['role:admin']], function () {

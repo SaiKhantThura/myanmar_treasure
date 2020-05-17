@@ -39,7 +39,7 @@
 		<div class="container">
 			<div class="row align-items-center no-gutters">
 				<div class="col-xl-3 col-lg-2">
-					<a class="navbar-brand" href="index.html">Myanmar Treasure</a>
+					<a class="navbar-brand" href="/">Myanmar Treasure</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 						aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="oi oi-menu"></span> Menu
@@ -55,13 +55,13 @@
 							<li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
 							<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
 										class="icon-shopping_cart"></span>[<span id="cartCount"></span>]</a></li>
-							<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
+							<li class="nav-item cta cta-colored"><a href="{{url('wishlist')}}" class="nav-link"><span
 								class="ion-ios-heart"></span>[<span id="cartCount"></span>]</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-xl-2 col-lg-2 d-none d-lg-block">
-					<div class="collapse navbar-collapse" id="ftco-nav">
+					<div class="collapse navbar-collapse account" id="ftco-nav">
 						<ul class="navbar-nav ml-auto">
 							@if (Auth::guest())
 							<li class="nav-item"><a href="{{url('login')}}" class="nav-link">Login</a></li>
@@ -72,7 +72,7 @@
 									aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
 								<div class="dropdown-menu" aria-labelledby="profile">
 									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-								document.getElementById('logout-form').submit();">
+									document.getElementById('logout-form').submit();">
 										{{ __('Logout') }}
 									</a>
 								</div>
