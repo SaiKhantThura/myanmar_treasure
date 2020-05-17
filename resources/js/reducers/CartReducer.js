@@ -15,7 +15,7 @@ export default function cartReducer(state = {
             if (state.cart.findIndex(product => product.id === productId) !== -1) {
                 const cart = state.cart.reduce((cartAcc, product) => {
                     if (product.id === productId) {
-                        cartAcc.push({ ...product, qty: product.qty+1, sum: (product.price)*(product.qty+1) }) // Increment qty
+                        cartAcc.push({ ...product, qty: action.qty, sum: (product.price)*(action.qty) }) // Increment qty
                     } else {
                         cartAcc.push(product)
                     }

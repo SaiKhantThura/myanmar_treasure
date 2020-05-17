@@ -15,7 +15,14 @@ class ProductSeeder extends Seeder
             [
                 "name"=> 'Longyi',
                 "price"=> '20000',
-                "image"=> '/assets/img/Longyi3_1589550125.jpg',
+                "image"=> '/vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi1.jpg',
+                "description"=> 'Myin Phyu Longyi',
+                "category_id"=> '1',
+            ],
+            [
+                "name"=> 'Longyi 2',
+                "price"=> '15000',
+                "image"=> '/vegefoods/images/productss/Bagan-accessories/Men-Clothing/Longyi2.jpg',
                 "description"=> 'Myin Phyu Longyi',
                 "category_id"=> '1',
             ],

@@ -13,5 +13,6 @@ require('./bootstrap');
  */
 
 require('./components/CartCount/Index');
+require('./components/ProductDetails/index');
 require('./components/CartContainer/Index');
 require('./components/Shop/index');

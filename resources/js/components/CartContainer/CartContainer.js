@@ -1,13 +1,38 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getCartTotal } from "../../actions";
+import { getCartTotal,getCartSubTotal, removeFromCart, QtyChange } from "../../actions";
+import { ToastContainer } from "react-toastify";
 class CartContainer extends Component {
-    handleQtyInput = e => {};
+    constructor(props){
+        super();
+        this.state ={
+            Qtys:[]
+        }
+    }
+    handleQtyInput = (e,product,index) => {
+        console.log(e.target.value);
+        console.log(product);
+        var Qtys = this.state.Qtys
+        Qtys[index] = e.target.value;
+        this.props.QtyChange(product,e.target.value);
+        this.setState({Qtys});
+    };
+    componentDidMount() {
+        console.log('rendeer')
+        var Qtys = this.props.cartList.map((cart,index)=>{
+            return cart.qty
+        })
+        this.setState({Qtys});
+    }
     render() {
         return (
             <>
                 <section className="ftco-section ftco-cart">
+                <ToastContainer />
+                    {
+                        this.props.cartList.length > 0 ? (
                     <div className="container">
+                    
                         <div className="row">
                             <div className="col-md-12">
                                 <table className="table">
@@ -15,20 +40,20 @@ class CartContainer extends Component {
                                         <tr className="text-center">
                                             <th>&nbsp;</th>
                                             <th>&nbsp;</th>
-                                            <th>Product name 2</th>
+                                            <th>Name</th>
                                             <th>Price</th>
                                             <th>Quantity</th>
                                             <th>Total</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {this.props.cartList.map(cart => (
+                                        {this.props.cartList.map((cart, index)=> (
                                             <tr
                                                 key={cart.id}
                                                 className="text-center"
                                             >
                                                 <td className="product-remove">
-                                                    <a href="#">
+                                                    <a href="#" onClick={() => this.props.removeFromCart(cart)}>
                                                         <span className="ion-ios-close"></span>
                                                     </a>
                                                 </td>
@@ -59,15 +84,16 @@ class CartContainer extends Component {
                                                 <td className="quantity">
                                                     <div className="input-group mb-3">
                                                         <input
-                                                            type="text"
+                                                            type="number"
                                                             name="quantity"
                                                             className="quantity form-control input-number"
-                                                            value={cart.qty}
+                                                            value={this.state.Qtys[index]}
                                                             min="1"
                                                             max="100"
+                                                            autoComplete="off"
                                                             onChange={e =>
                                                                 this.handleQtyInput(
-                                                                    e
+                                                                    e,cart,index
                                                                 )
                                                             }
                                                         />
@@ -89,11 +115,11 @@ class CartContainer extends Component {
                                     <h3>Cart Totals</h3>
                                     <p className="d-flex">
                                         <span>Subtotal</span>
-                                        <span>{this.props.total} MMK</span>
+                                        <span>{this.props.subTotal} MMK</span>
                                     </p>
                                     <p className="d-flex">
                                         <span>Delivery</span>
-                                        <span>$0.00</span>
+                                        <span>2000 MMK</span>
                                     </p>
                                     <hr />
                                     <p className="d-flex total-price">
@@ -112,6 +138,18 @@ class CartContainer extends Component {
                             </div>
                         </div>
                     </div>
+                        )
+                        : 
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-12 text-center">
+                                    <img src="/vegefoods/images/empty_cart.png"/>
+                                    <h3>Your Cart is Empty</h3>
+                                    <p>Look like you haven't added anything to your cart yet !</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 </section>
             </>
         );
@@ -121,8 +159,9 @@ class CartContainer extends Component {
 function mapStateToProps(state) {
     return {
         cartList: state.cartList.cart,
-        total: getCartTotal(state.cartList.cart)
+        total: getCartTotal(state.cartList.cart),
+        subTotal: getCartSubTotal(state.cartList.cart)
     };
 }
 
-export default connect(mapStateToProps)(CartContainer);
+export default connect(mapStateToProps,{removeFromCart,QtyChange})(CartContainer);

@@ -25,6 +25,7 @@ Route::get('product-single/{product}', 'FrontendController@productSingle');
 Route::get('cart', 'FrontendController@cart');
 Route::get('checkout', 'FrontendController@checkout');
 Route::get('categories/all', 'FrontendController@getAllCategories');
+Route::get('/shop-products/{product}', 'FrontendController@getProductsDetails');
 Route::get('/shop-products', 'FrontendController@getProducts');
 
 

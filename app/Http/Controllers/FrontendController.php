@@ -66,4 +66,9 @@ class FrontendController extends Controller
         }
         return response()->json($products);
     }
+
+    public function getProductsDetails(Product $product)
+    {
+        return response()->json($product);
+    }
 }

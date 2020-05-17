@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import Axios from "axios";
 import { connect } from "react-redux";
 import {addToCart} from '../../actions'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 class Shop extends Component {
     constructor(props){
         super();
@@ -41,6 +44,7 @@ class Shop extends Component {
     render() {
         return (
             <section className="ftco-section">
+                <ToastContainer />
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-md-10 mb-5 text-center">
