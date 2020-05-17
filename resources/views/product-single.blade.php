@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<div id="product-details" data-productId="1"></div>
+<div id="product-details" data-productId="{{$product->id}}"></div>
 @endsection
 
 @push('js')
