@@ -28,6 +28,7 @@ Route::get('categories/all', 'FrontendController@getAllCategories');
 Route::get('/shop-products/{product}', 'FrontendController@getProductsDetails');
 Route::get('/shop-products', 'FrontendController@getProducts');
 
+Route::resource('orders', 'OrderController');
 
 Auth::routes();
 

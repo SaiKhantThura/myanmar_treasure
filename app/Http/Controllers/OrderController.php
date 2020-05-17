@@ -14,7 +14,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+        return view('orders.index',compact('orders'));
     }
 
     /**
@@ -35,7 +36,20 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validatedData();
+        $order = new Order;
+        $order->name = $request->name;
+        $order->address = $request->address;
+        $order->address = $request->address;
+        $order->phone = $request->phone;
+        $order->subtotal = $request->subtotal;
+        $order->total = $request->total;
+        if (auth()->user()){
+            $order->user_id = auth()->user()->id;
+        }
+        $order->save();
+        $order->orderProducts()->createMany($request->cart);
+        
     }
 
     /**
@@ -81,5 +95,14 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+    public function validatedData()
+    {
+        return request()->validate([
+            'name'=>'required',
+            'address'=>'required',
+            'phone'=>'required',
+        ]); 
     }
 }

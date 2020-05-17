@@ -104,6 +104,11 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Products') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('orders.index') }}">
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Orders') }}
+                    </a>
+                </li>
             </ul> 
         </div>
     </div>
