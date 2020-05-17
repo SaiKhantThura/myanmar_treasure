@@ -17,7 +17,5 @@
 @endsection
 
 @push('js')
-<script>
-    console.log('doc')
-</script>
+
 @endpush
