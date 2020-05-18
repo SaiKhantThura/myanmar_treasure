@@ -131,6 +131,7 @@
 							<a class="nav-link dropdown-toggle text-center" href="#" id="profile" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
 							<div class="dropdown-menu" aria-labelledby="profile">
+								<a class="dropdown-item" href="{{url('useredit')}}">Edit Profile</a>
 								<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
 								document.getElementById('logout-form').submit();">
 									{{ __('Logout') }}
