@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getCartTotal,getCartSubTotal, removeFromCart, QtyChange } from "../../actions";
+import { getCartTotal,getCartSubTotal, removeFromCart, QtyChange, clearCart } from "../../actions";
 import { ToastContainer } from "react-toastify";
 import Axios from "axios";
 class Checkout extends Component {
@@ -47,6 +47,11 @@ class Checkout extends Component {
         Axios.post('/orders',data)
         .then(respose=>{
             this.setState({isLoading:false});
+            if(respose.status == 201){
+                this.props.clearCart();
+            }
+            console.log(respose);
+            location.replace(`/receipt?order=${respose.data.id}`)
         })
         .catch(error =>{
             console.log(error.response)
@@ -178,4 +183,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps,{removeFromCart,QtyChange})(Checkout);
+export default connect(mapStateToProps,{removeFromCart,QtyChange,clearCart})(Checkout);

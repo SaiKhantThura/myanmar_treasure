@@ -36,7 +36,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validatedData();
+        // $this->validatedData();
         $order = new Order;
         $order->name = $request->name;
         $order->address = $request->address;
@@ -50,6 +50,7 @@ class OrderController extends Controller
         $order->save();
         $order->orderProducts()->createMany($request->cart);
         
+        return response()->json($order)->setStatusCode(201);
     }
 
     /**

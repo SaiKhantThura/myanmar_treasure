@@ -2,7 +2,8 @@ import {
     ADD_TO_CART,
     REMOVE_FROM_CART,
     INCREMENT_QTY,
-    DECREMENT_QTY
+    DECREMENT_QTY,
+    CLEAR_CART
 } from '../actions/ActionTypes'
 
 
@@ -10,6 +11,10 @@ export default function cartReducer(state = {
     cart: []
 }, action) {
     switch (action.type) {
+        case CLEAR_CART:
+            return{
+                cart:[]
+            }
         case ADD_TO_CART:
             const productId = action.product.id
             if (state.cart.findIndex(product => product.id === productId) !== -1) {

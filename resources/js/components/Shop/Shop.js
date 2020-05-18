@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Axios from "axios";
 import { connect } from "react-redux";
-import {addToCart} from '../../actions'
+import {addToCart,addToWishlist} from '../../actions'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -113,13 +113,13 @@ class Shop extends Component {
                                                     <a
                                                         class="buy-now d-flex justify-content-center align-items-center mx-1"
                                                         onClick={() => this.props.addToCart(product, 1)}
-                                                    >
+                                                        >
                                                         <span>
                                                             <i class="ion-ios-cart"></i>
                                                         </span>
                                                     </a>
                                                     <a
-                                                        href={`product-single/${product.id}`}
+                                                        onClick={() => this.props.addToWishlist(product, 1)}
                                                         class="heart d-flex justify-content-center align-items-center"
                                                     >
                                                         <span>
@@ -141,4 +141,4 @@ class Shop extends Component {
 }
 
 
-export default connect(null, {addToCart})(Shop)
+export default connect(null, {addToCart,addToWishlist})(Shop)

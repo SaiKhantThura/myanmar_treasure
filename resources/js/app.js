@@ -17,3 +17,5 @@ require('./components/ProductDetails/index');
 require('./components/CartContainer/Index');
 require('./components/Shop/index');
 require('./components/Checkout/Index');
+require('./components/WishListCount/Index')
+require('./components/WishListContainer/Index')
