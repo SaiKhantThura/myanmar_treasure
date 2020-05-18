@@ -87,8 +87,9 @@
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading">Categories</h3>
                     <ul class="categories">
+                            <li><a href="{{route('blog')}}">All[{{count($all_blogs)}}]</a></li>
                         @foreach($blog_categories as $category)
-                            <li><a href="#">{{$category->name}} [{{count($category->blogs)}}]</a></li>
+                            <li><a href="{{route('blog_with_category',$category->id)}}">{{$category->name}} [{{count($category->blogs)}}]</a></li>
                         @endforeach
                     </ul>
                 </div>

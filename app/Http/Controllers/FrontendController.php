@@ -24,12 +24,24 @@ class FrontendController extends Controller
     }
     public function blog()
     {
+        $all_blogs=Blog::all();
         $blog_categories = BlogCategory::all();
         $blogs = DB::table('blogs')
         ->join('blog_categories', 'blog_categories.id', '=', 'blogs.blog_category_id')
         ->select('blogs.*', 'blog_categories.name as name')
         ->get();
-        return view('blog',compact('blog_categories','blogs'));
+        return view('blog',compact('blog_categories','blogs','all_blogs'));
+    }
+    public function blogwithcategory($id)
+    {
+        $all_blogs=Blog::all();
+        $blog_categories = BlogCategory::all();
+        $blogs = DB::table('blogs')
+        ->join('blog_categories', 'blog_categories.id', '=', 'blogs.blog_category_id')
+        ->select('blogs.*', 'blog_categories.name as name','blog_categories.id as blog_category_id')
+        ->where('blog_category_id', '=' , $id)
+        ->get();
+        return view('blog',compact('blog_categories','blogs','all_blogs'));
     }
     public function singleBlog($id)
     {

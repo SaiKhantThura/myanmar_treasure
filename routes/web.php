@@ -17,8 +17,8 @@ Route::get('/', 'FrontendController@index');
 Route::get('about', 'FrontendController@about');
 Route::get('contact', 'FrontendController@contact');
 
-Route::get('blog', 'FrontendController@blog');
-
+Route::get('blog', 'FrontendController@blog')->name('blog');
+Route::get('blog/{id}', 'FrontendController@blogwithcategory')->name('blog_with_category');
 Route::get('/single_blog/{blog}','FrontendController@singleBlog')->name('single_blog');
 Route::get('shop', 'FrontendController@shop');
 Route::get('product-single/{product}', 'FrontendController@productSingle');
