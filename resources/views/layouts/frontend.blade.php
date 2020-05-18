@@ -122,7 +122,7 @@
 						<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
 							class="icon-shopping_cart"></span>[<span id="cartCount"></span>]</a></li>
 						<li class="nav-item cta cta-colored"><a href="{{url('wishlist')}}" class="nav-link"><span
-							class="ion-ios-heart"></span>[<span id="cartCount"></span>]</a></li>
+							class="ion-ios-heart"></span>[<span id="wishlistCount"></span>]</a></li>
 						@if (Auth::guest())
 						<li class="nav-item"><a href="{{url('login')}}" class="nav-link">Login</a></li>
 						<li class="nav-item"><a href="{{url('register')}}" class="nav-link">Register</a></li>

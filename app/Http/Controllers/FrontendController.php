@@ -7,12 +7,18 @@ use App\Product;
 use App\Category;
 use App\BlogCategory;
 use App\Blog;
+use App\Order;
 use Illuminate\Support\Facades\DB;
 class FrontendController extends Controller
 {
     public function index()
     {
         return view('welcome');
+    }
+    public function receipt(Request $request)
+    {
+        $order = Order::find($request->input('order'));
+        return view('receipt',compact('order'));
     }
     public function about()
     {
