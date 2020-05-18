@@ -6,7 +6,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
+            <a class="navbar-brand" href="{{ route('home') }}" style="color: #b38867; font-weight: 800; font-size:20px;text-transform: uppercase;">Myanmar Treasure</a>
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -85,28 +85,28 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('blogs.index') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Blogs') }}
+                        <i class="ni ni-collection text-primary"></i> {{ __('Blogs') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('blogcaregories.index') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Blog Categories') }}
+                        <i class="ni ni-single-copy-04 text-primary"></i> {{ __('Blog Categories') }}
                     </a>
                 </li>
             
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('categories.index') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Categories') }}
+                        <i class="ni ni-archive-2 text-primary"></i> {{ __('Product Categories') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('products.index') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Products') }}
+                        <i class="ni ni-archive-2 text-primary"></i> {{ __('Products') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('orders.index') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Orders') }}
+                        <i class="ni ni-bag-17 text-primary"></i> {{ __('Orders') }}
                     </a>
                 </li>
             </ul> 

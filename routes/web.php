@@ -35,6 +35,10 @@ Route:: get('/wishlist', function(){
 	return view('wishlist');
 });
 
+Route:: get('/useredit', function(){
+	return view('useredit');
+});
+
 Auth::routes();
 
 Route::group(['middleware' => ['role:admin']], function () {

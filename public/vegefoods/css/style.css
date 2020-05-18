@@ -9246,7 +9246,7 @@ textarea.form-control {
   width: 100%; }
   @media (max-width: 991.98px) {
     #map {
-      height: 300px; } }
+      min-height: 200px; } }
 
 @-webkit-keyframes pulse {
   0% {
