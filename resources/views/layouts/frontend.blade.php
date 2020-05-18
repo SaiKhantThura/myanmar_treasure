@@ -36,39 +36,40 @@
 <body class="goto-here">
 	<!-- Nav -->
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<div class="container">
+		<!-- <div class="container-fluid">
 			<div class="row align-items-center no-gutters">
-				<div class="col-xl-3 col-lg-2">
+				<div class="col-xl-2 col-lg-2 logo">
 					<a class="navbar-brand" href="/">Myanmar Treasure</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 						aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="oi oi-menu"></span> Menu
 					</button>
 				</div>
-				<div class="col-xl-7 col-lg-7">
-					<div class="collapse navbar-collapse" id="ftco-nav">
+				<div class="col-xl-5 col-lg-7">
+					<div class="collapse navbar-collapse links" id="ftco-nav">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
 							<li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
 							<li class="nav-item"><a href="{{url('shop')}}" class="nav-link">Shop</a></li>
 							<li class="nav-item"><a href="{{url('blog')}}" class="nav-link">Blog</a></li>
 							<li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-5 col-lg-5 d-none d-lg-block">
+					<div class="collapse navbar-collapse account" id="ftco-nav">
+						<ul class="navbar-nav ml-auto">
 							<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
 										class="icon-shopping_cart"></span>[<span id="cartCount"></span>]</a></li>
 							<li class="nav-item cta cta-colored"><a href="{{url('wishlist')}}" class="nav-link"><span
 								class="ion-ios-heart"></span>[<span id="cartCount"></span>]</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-xl-2 col-lg-2 d-none d-lg-block">
-					<div class="collapse navbar-collapse account" id="ftco-nav">
-						<ul class="navbar-nav ml-auto">
 							@if (Auth::guest())
 							<li class="nav-item"><a href="{{url('login')}}" class="nav-link">Login</a></li>
 							<li class="nav-item"><a href="{{url('register')}}" class="nav-link">Register</a></li>
 							@else
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="profile" data-toggle="dropdown"
+								<a class="nav-link dropdown-toggle text-center" href="#" id="profile" data-toggle="dropdown"
 									aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
 								<div class="dropdown-menu" aria-labelledby="profile">
 									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -96,6 +97,54 @@
 
 				</ul>
 			</div>
+		</div> -->
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">Myanmar Treasure</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+			<div class="col-xl-6 col-lg-6">
+				<div class="collapse navbar-collapse" id="ftco-nav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
+						<li class="nav-item"><a href="{{url('shop')}}" class="nav-link">Shop</a></li>
+						<li class="nav-item"><a href="{{url('blog')}}" class="nav-link">Blog</a></li>
+						<li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="col-xl-4 col-lg-4">
+				<div class="collapse navbar-collapse" id="ftco-nav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
+							class="icon-shopping_cart"></span>[<span id="cartCount"></span>]</a></li>
+						<li class="nav-item cta cta-colored"><a href="{{url('wishlist')}}" class="nav-link"><span
+							class="ion-ios-heart"></span>[<span id="cartCount"></span>]</a></li>
+						@if (Auth::guest())
+						<li class="nav-item"><a href="{{url('login')}}" class="nav-link">Login</a></li>
+						<li class="nav-item"><a href="{{url('register')}}" class="nav-link">Register</a></li>
+						@else
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-center" href="#" id="profile" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
+							<div class="dropdown-menu" aria-labelledby="profile">
+								<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+								document.getElementById('logout-form').submit();">
+									{{ __('Logout') }}
+								</a>
+							</div>
+						</li>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+							@csrf
+						</form>
+						@endif
+						
+					</ul>
+				</div>
+			</div>
 		</div>
 	</nav>
 	<!-- END nav -->
@@ -121,7 +170,8 @@
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Myanmar Treasure</h2>
-						<p>View the things to do, restaurants and hotels you saved on a map. Easily access all your saves while traveling, wherever you go.</p>
+						<p>View the things to do, restaurants and hotels you saved on a map. Easily access all your
+							saves while traveling, wherever you go.</p>
 						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 							<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
 							<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -162,11 +212,13 @@
 						<h2 class="ftco-heading-2">Have a Questions?</h2>
 						<div class="block-23 mb-3">
 							<ul>
-								<li><span class="icon icon-map-marker"></span><span class="text">Near Archaeological Museum, Old Bagan,
-									Mandalay Division, Myanmar.</span></li>
-								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+959 962 511 480 <br> +959 402 523 271
-									</span></a>
-									
+								<li><span class="icon icon-map-marker"></span><span class="text">Near Archaeological
+										Museum, Old Bagan,
+										Mandalay Division, Myanmar.</span></li>
+								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+959 962 511 480
+											<br> +959 402 523 271
+										</span></a>
+
 								</li>
 								<li><a href="#"><span class="icon icon-envelope"></span><span
 											class="text">info@baganpd.com</span></a></li>
@@ -194,7 +246,8 @@
 	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
 			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
 			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" /></svg></div>
+				stroke="#F96D00" /></svg>
+	</div>
 
 
 	<script src="{{ asset('vegefoods') }}/js/jquery.min.js"></script>

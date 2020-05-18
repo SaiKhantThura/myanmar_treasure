@@ -14,7 +14,7 @@
 					<div class="col-md-12 ftco-animate text-center">
 						<h1 class="mb-2">Wherever you go, go with all your heart</h1>
 						<h2 class="subheading mb-4">we deliver traditional products &amp; informations </h2>
-						<p><a href="#" class="btn btn-primary">View Details</a></p>
+						<p><a href="#about" class="btn btn-secondary">View Details</a></p>
 					</div>
 
 				</div>
@@ -29,7 +29,7 @@
 					<div class="col-md-12 ftco-animate text-center">
 						<h1 class="mb-2">Wherever you go, go with all your heart</h1>
 						<h2 class="subheading mb-4">we deliver traditional products &amp; informations </h2>
-						<p><a href="#" class="btn btn-primary">View Details</a></p>
+						<p><a href="#about" class="btn btn-secondary">View Details</a></p>
 					</div>
 
 				</div>
@@ -40,7 +40,7 @@
 @endsection
 
 @section('content')
-<section class="ftco-section">
+<section class="ftco-section" id="about">
 	<div class="container">
 		<div class="row no-gutters ftco-services">
 			<div class="col-md-4 text-center d-flex align-self-stretch ftco-animate">
@@ -50,7 +50,7 @@
 					</div>
 					<div class="media-body">
 						<h3 class="heading">Free Shipping</h3>
-						<span>On order over $100</span>
+						<span>On order over 30000 Ks</span>
 					</div>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 						<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex">
 							<div class="prd text text-center">
 								<h2>Products</h2>
-								<p><a href="#" class="btn btn-primary">Shop now</a></p>
+								<p><a href="shop" class="btn btn-primary">Shop now</a></p>
 							</div>
 						</div>
 					</div>
@@ -521,6 +521,14 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="vegefoods/js/google-map.js"></script>
 <script src="vegefoods/js/main.js"></script> -->
+<script>
+	$("a").on("click", function(e) {
+    e.preventDefault();
+    var sectionID = '#'+ $(this).data("section");
+    $("#about section:visible").fadeOut();
+    $(sectionID).fadeIn();
+	});
+</script>
 
 </body>
 

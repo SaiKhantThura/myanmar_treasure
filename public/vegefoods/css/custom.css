@@ -124,5 +124,18 @@
   }
   .navbar-brand{
       word-spacing: 10px;
+      letter-spacing: 1px;
       
   }
+  .info p{
+    color: black;
+  }
+  .info span{
+    color: gray;
+  }
+ .links{
+   padding-left: 250px;
+ }
+ .view{
+   background: red;
+ }
