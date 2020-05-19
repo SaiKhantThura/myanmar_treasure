@@ -19,11 +19,9 @@ class ProductCategoryTablesSeeder extends Seeder
                 "name"=> 'Women Clothings',
             ],
             [
-                "name"=> 'Traditional Foods',
+                "name"=> 'Accessories',
             ],
-            [
-                "name"=> 'Drinks',
-            ],
+
         ]);
     }
 }
