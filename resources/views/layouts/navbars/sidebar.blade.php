@@ -109,6 +109,11 @@
                         <i class="ni ni-bag-17 text-primary"></i> {{ __('Orders') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('feedback.index') }}">
+                        <i class="ni ni-bag-17 text-primary"></i> {{ __('Feedbacks') }}
+                    </a>
+                </li>
             </ul> 
         </div>
     </div>

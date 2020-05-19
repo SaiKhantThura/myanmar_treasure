@@ -8,6 +8,7 @@ use App\Category;
 use App\BlogCategory;
 use App\Blog;
 use App\Order;
+use App\Feedback;
 use Illuminate\Support\Facades\DB;
 class FrontendController extends Controller
 {
@@ -94,4 +95,21 @@ class FrontendController extends Controller
     {
         return response()->json($product);
     }
+
+    public function savingfeedback(Request $request)
+    {    
+        Feedback::create($this->feedbackValidatedData());
+        return redirect()->route('index')->withStatus(__('Your feedback had been received'));
+    
+    }
+    public function feedbackValidatedData()
+    {
+        return request()->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'subject'=>'required',
+            'message'=>'required',
+        ]); 
+    }
+    
 }

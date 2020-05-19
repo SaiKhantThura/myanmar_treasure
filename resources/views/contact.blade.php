@@ -44,20 +44,45 @@
         </div>
         <div class="row block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-white p-5 contact-form">
+            <form action="{{ route('savingfeedback') }}" method="post" class="bg-white p-5 contact-form" autocomplete="off"  enctype="multipart/form-data">
+            @csrf
+            @method('post')
                 <h2>Feedback Form</h2>
               
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+              <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                <input type="text" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Your Name" name="name">
+                @if ($errors->has('name'))
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('name') }}</strong>
+                  </span>
+                @endif
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+
+              <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                <input type="text" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Your Email" name="email">
+                @if ($errors->has('email'))
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                  </span>
+                @endif
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
+
+              <div class="form-group{{ $errors->has('subject') ? ' has-danger' : '' }}">
+                <input type="text" class="form-control form-control-alternative{{ $errors->has('subject') ? ' is-invalid' : '' }}" placeholder="Subject" name="subject">
+                @if ($errors->has('subject'))
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('subject') }}</strong>
+                  </span>
+                @endif
               </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+
+              <div class="form-group{{ $errors->has('message') ? ' has-danger' : '' }}">
+                <textarea id="" cols="30" rows="7" class="form-control form-control-alternative{{ $errors->has('message') ? ' is-invalid' : '' }}" placeholder="Message" name="message"></textarea>
+                @if ($errors->has('message'))
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('message') }}</strong>
+                  </span>
+                @endif
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">

@@ -152,7 +152,7 @@ class BlogSeeder extends Seeder
             [
                 "title"=> 'A Kyaw Sone',
                 "description"=> "These deep-fried snacks consist of leafy vegetables, onions, sweet potatoes, tofu and mock meat, served with a sweet and tangy sauce. It was a wonderful contrast of earthy, crisp and chewy.",
-                "image"=> '/vegefoods/images/productss/Myamar-food/Snacks/a-kyaw-sone/akyaw 4.jpg',
+                "image"=> '/vegefoods/images/productss/Myamar-food/Snacks/a -kyaw-sone/akyaw 4.jpg',
                 "blog_category_id"=> '4',
             ],
             [

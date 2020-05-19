@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'FrontendController@index');
+Route::get('/', 'FrontendController@index')->name('index');
 Route::get('about', 'FrontendController@about');
 Route::get('contact', 'FrontendController@contact');
+Route::POST('contact', 'FrontendController@SavingFeedback')->name('savingfeedback');
 
 Route::get('blog', 'FrontendController@blog')->name('blog');
 Route::get('blog/{id}', 'FrontendController@blogwithcategory')->name('blog_with_category');
@@ -28,7 +29,9 @@ Route::get('categories/all', 'FrontendController@getAllCategories');
 Route::get('/shop-products/{product}', 'FrontendController@getProductsDetails');
 Route::get('/shop-products', 'FrontendController@getProducts');
 
+
 Route::resource('orders', 'OrderController');
+Route::resource('feedback', 'FeedbackController');
 
 Route:: get('/receipt','FrontendController@receipt');
 Route:: get('/wishlist', function(){
@@ -48,6 +51,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::resource('products', 'ProductController');
 	Route::resource('blogcaregories', 'BlogCategoryController');
 	Route::resource('blogs', 'BlogController');
+	Route::resource('feedback', 'FeedbackController');
 	
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 });
