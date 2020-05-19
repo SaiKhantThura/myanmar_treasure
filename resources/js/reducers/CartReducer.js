@@ -16,11 +16,14 @@ export default function cartReducer(state = {
                 cart:[]
             }
         case ADD_TO_CART:
+            console.log('reducer')
+            console.log(action.product);
+            console.log(state.cart)
             const productId = action.product.id
             if (state.cart.findIndex(product => product.id === productId) !== -1) {
                 const cart = state.cart.reduce((cartAcc, product) => {
                     if (product.id === productId) {
-                        cartAcc.push({ ...product, qty: action.qty, sum: (product.price)*(action.qty) }) // Increment qty
+                        cartAcc.push({ ...product, qty: (parseInt(action.qty)+parseInt(product.qty)), sum: (product.price)*(action.qty) }) // Increment qty
                     } else {
                         cartAcc.push(product)
                     }

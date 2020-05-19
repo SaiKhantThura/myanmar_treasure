@@ -16,6 +16,10 @@ class FrontendController extends Controller
     {
         return view('welcome');
     }
+    public function ramdomProducts(){
+        $products = Product::all()->random(8);
+        return response()->json($products);
+    }
     public function receipt(Request $request)
     {
         $order = Order::find($request->input('order'));

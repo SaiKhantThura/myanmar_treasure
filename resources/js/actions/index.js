@@ -4,8 +4,15 @@ import * as types from './ActionTypes'
 
 //it seems that I should probably use this as the basis for "Cart"
 export const addToCart = (product,qty) => (dispatch) => {
-    console.log('hi');
-    toast.success("Item Added to Cart");
+    toast.success("Item Added to Cart",{
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
         dispatch(addToCartUnsafe(product, qty))
 
 }
@@ -15,14 +22,30 @@ export const addToCartUnsafe = (product, qty) => ({
     qty
 });
 export const removeFromCart = product_id => (dispatch) => {
-    toast.error("Item Removed from Cart");
+    toast.error("Item Removed from Cart",{
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     dispatch({
         type: types.REMOVE_FROM_CART,
         product_id
     })
 };
 export const incrementQty = (product,qty) => (dispatch) => {
-    toast.success("Item Added to Cart");
+    toast.success("Item Added to Cart",{
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     dispatch(addToCartUnsafe(product, qty))
 
 }
@@ -30,7 +53,15 @@ export const QtyChange = (product,qty) => (dispatch) => {
     dispatch(addToCartUnsafe(product, qty))
 }
 export const decrementQty = productId => (dispatch) => {
-    toast.warn("Item Decrement Qty to Cart");
+    toast.warn("Item Decrement Qty to Cart",{
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
 
     dispatch({
     type: types.DECREMENT_QTY,
@@ -60,14 +91,30 @@ export const getCartTotal = cartItems => {
 }
 
 export const addToCartAndRemoveWishlist = (product,qty) => (dispatch) => {
-    toast.success("Item Added to Cart");
+    toast.success("Item Added to Cart",{
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     dispatch(addToCartUnsafe(product, qty));
     dispatch(removeFromWishlist(product));
 }
 
 //it seems that I should probably use this as the basis for "Wishlist"
 export const addToWishlist = (product) => (dispatch) => {
-    toast.success("Item Added to Wishlist");
+    toast.success("Item Added to Wishlist",{
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     dispatch(addToWishlistUnsafe(product))
 
 }
@@ -76,7 +123,15 @@ export const addToWishlistUnsafe = (product) => ({
     product
 });
 export const removeFromWishlist = product_id => (dispatch) => {
-    toast.error("Item Removed from Wishlist");
+    toast.error("Item Removed from Wishlist",{
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     dispatch({
         type: types.REMOVE_FROM_WISHLIST,
         product_id

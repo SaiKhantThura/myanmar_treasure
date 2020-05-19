@@ -28,7 +28,9 @@
                                 <th scope="col">subtotal</th>
                                 <th scope="col">shipping fees</th>
                                 <th scope="col">Total</th>
-                                <th scope="col"></th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +48,26 @@
                                 <td>{{$order->subtotal}}</td>
                                 <td>2000</td>
                                 <td>{{$order->total}}</td>
+                                <td><span class="badge badge-pill badge-default">{{$order->created_at->diffForHumans()}}</span></td>
+                                <td><span class="badge badge-pill badge-{{$order->status == 'new'?'warning' : 'success'}}">{{$order->status}}</span></td>
+                                <td class="text-right">
+                                    @if($order->status=='new')
+                                    <form
+                                        method="POST"
+                                        action="{{route('order_accept',$order->id)}}"
+                                        style="display: inline-block;"
+                                    >
+                                        <button
+                                            type="submit"
+                                            rel="tooltip" class="btn btn-primary btn-sm btn-round btn-icon"
+                                            onclick="return confirm('Are You Confirm')"
+                                        >
+                                            <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>  
+                                        </button>
+                                        @csrf @method('PUT')
+                                    </form>
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -64,3 +86,11 @@
     @include('layouts.footers.auth')
     </div>
 @endsection
+
+@push('js')
+<script>
+    function Ago(time){
+       console.log(moment(time).fromNow);
+    }
+</script>
+@endpush

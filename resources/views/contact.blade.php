@@ -44,13 +44,21 @@
         </div>
         <div class="row block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="{{ route('savingfeedback') }}" method="post" class="bg-white p-5 contact-form" autocomplete="off"  enctype="multipart/form-data">
+            <form action="{{ route('feedbacks.store') }}" method="post" class="bg-white p-5 contact-form" autocomplete="off"  enctype="multipart/form-data">
             @csrf
             @method('post')
                 <h2>Feedback Form</h2>
+                @if (session('status'))
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{ session('status') }}
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+              @endif 
               
               <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                <input type="text" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Your Name" name="name">
+                <input type="text" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{old('name')}}" placeholder="Your Name" name="name">
                 @if ($errors->has('name'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('name') }}</strong>
@@ -59,7 +67,7 @@
               </div>
 
               <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                <input type="text" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Your Email" name="email">
+                <input type="text" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{old('email')}}" placeholder="Your Email" name="email">
                 @if ($errors->has('email'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('email') }}</strong>
@@ -68,7 +76,7 @@
               </div>
 
               <div class="form-group{{ $errors->has('subject') ? ' has-danger' : '' }}">
-                <input type="text" class="form-control form-control-alternative{{ $errors->has('subject') ? ' is-invalid' : '' }}" placeholder="Subject" name="subject">
+                <input type="text" class="form-control form-control-alternative{{ $errors->has('subject') ? ' is-invalid' : '' }}" value="{{old('subject')}}" placeholder="Subject" name="subject">
                 @if ($errors->has('subject'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('subject') }}</strong>
@@ -77,7 +85,7 @@
               </div>
 
               <div class="form-group{{ $errors->has('message') ? ' has-danger' : '' }}">
-                <textarea id="" cols="30" rows="7" class="form-control form-control-alternative{{ $errors->has('message') ? ' is-invalid' : '' }}" placeholder="Message" name="message"></textarea>
+                <textarea id="" cols="30" rows="7" class="form-control form-control-alternative{{ $errors->has('message') ? ' is-invalid' : '' }}" placeholder="Message" name="message">{{old('message')}}</textarea>
                 @if ($errors->has('message'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('message') }}</strong>

@@ -14,7 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::latest()->get();
         return view('orders.index',compact('orders'));
     }
 
@@ -105,5 +105,12 @@ class OrderController extends Controller
             'address'=>'required',
             'phone'=>'required',
         ]); 
+    }
+
+    public function accepted(Order $order){
+        $order->status = 'accepted';
+        $order->save();
+
+        return redirect()->back();
     }
 }

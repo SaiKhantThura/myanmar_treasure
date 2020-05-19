@@ -65,7 +65,7 @@
 
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Description') }}</label>
-                                    <textarea id="description" rows="3" name="description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ old('name',$product->description) }}" value="{{ old('name',$product->description) }}" required autofocus></textarea>
+                                    <textarea id="description" rows="3" name="description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" required autofocus> {{ old('description',$product->description) }} </textarea>
 
                                     @if ($errors->has('description'))
                                         <span class="invalid-feedback" role="alert">

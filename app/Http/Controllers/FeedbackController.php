@@ -36,8 +36,8 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {    
-        // Feedback::create($this->validatedData());
-        // return redirect()->route('index')->withStatus(__('Your feedback had been received'));
+        Feedback::create($this->validatedData());
+        return redirect()->back()->withStatus(__('Your feedback had been received'));
     
     }
 
@@ -85,14 +85,14 @@ class FeedbackController extends Controller
     {
         $feedback = Feedback::find($id);
         $feedback->delete();
-        return redirect()->route('feedback.index')->withStatus(__('Your feedback had been received'));
+        return redirect()->route('feedback.index')->withStatus(__('Thanks for your feedback !'));
 
     }
     public function validatedData()
     {
         return request()->validate([
             'name'=>'required',
-            'email'=>'required',
+            'email'=>'required|email',
             'subject'=>'required',
             'message'=>'required',
         ]); 

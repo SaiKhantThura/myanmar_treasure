@@ -59,6 +59,7 @@ class CartContainer extends Component {
                                                 </td>
 
                                                 <td className="image-prod">
+                                                <a href={`product-single/${cart.id}`} class="img-prod">
                                                     <img
                                                         className="img"
                                                         src={cart.image}
@@ -66,10 +67,13 @@ class CartContainer extends Component {
                                                             objectFit: "cover"
                                                         }}
                                                     />
+                                                    </a>
                                                 </td>
 
                                                 <td className="product-name">
-                                                    <h3>{cart.name}</h3>
+                                                    <a href={`product-single/${cart.id}`} class="img-prod">
+                                                        <h3>{cart.name}</h3>
+                                                    </a>
                                                     <p>
                                                         Far far away, behind the
                                                         word mountains, far from

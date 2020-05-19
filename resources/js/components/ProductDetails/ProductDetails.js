@@ -24,12 +24,12 @@ class ProductDetails extends Component {
     }
     minus = (e) =>{
         if(this.state.quantity >= 0){
-            this.setState({quantity:this.state.quantity-1});
+            this.setState({quantity:parseInt(this.state.quantity)-1});
         }
     }
     plus = (e) =>{
         if(this.state.quantity<=100){
-            this.setState({quantity:this.state.quantity+1});
+            this.setState({quantity:parseInt(this.state.quantity)+1});
         }
     }
     handleInput = (e) =>{
@@ -66,7 +66,7 @@ class ProductDetails extends Component {
                                         </button>
                                     </span>
                                     <input type="number" id="quantity" name="quantity" className="form-control input-number" onChange={(e)=>this.handleInput(e)} value={this.state.quantity}
-                                        min="1" max="100"/>
+                                        min="1" max="100" autoComplete="off"/>
                                     <span className="input-group-btn ml-2">
                                         <button type="button" className="quantity-right-plus btn" onClick={(e)=>this.plus(e)}>
                                             <i className="ion-ios-add"></i>

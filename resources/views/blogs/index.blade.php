@@ -29,7 +29,6 @@
                                 <th scope="col">Image</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Blog Category</th>
-                                <th scope="col">description</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -44,7 +43,6 @@
                                 </td>
                                 <td>{{$blog->title}}</td>
                                 <td>{{$blog->name}}</td>
-                                <td>{{$blog->description}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('blogs.edit',$blog->id)}}">
                                         <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>     

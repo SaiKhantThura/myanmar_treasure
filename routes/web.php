@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontendController@index')->name('index');
 Route::get('about', 'FrontendController@about');
 Route::get('contact', 'FrontendController@contact');
-Route::POST('contact', 'FrontendController@SavingFeedback')->name('savingfeedback');
 
 Route::get('blog', 'FrontendController@blog')->name('blog');
 Route::get('blog/{id}', 'FrontendController@blogwithcategory')->name('blog_with_category');
@@ -28,10 +27,12 @@ Route::get('checkout', 'FrontendController@checkout');
 Route::get('categories/all', 'FrontendController@getAllCategories');
 Route::get('/shop-products/{product}', 'FrontendController@getProductsDetails');
 Route::get('/shop-products', 'FrontendController@getProducts');
+Route::get('/ramdom-products', 'FrontendController@ramdomProducts');
 
 
+Route::put('orders/{order}/accepted','OrderController@accepted')->name('order_accept');
 Route::resource('orders', 'OrderController');
-Route::resource('feedback', 'FeedbackController');
+Route::resource('feedbacks', 'FeedbackController');
 
 Route:: get('/receipt','FrontendController@receipt');
 Route:: get('/wishlist', function(){
