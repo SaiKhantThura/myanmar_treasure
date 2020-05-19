@@ -98,13 +98,13 @@
 						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end"
 							style="background-image: url(vegefoods/images/contents/3.jpg);">
 							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Men Clothings</a></h2>
+								<h2 class="mb-0"><a href="shop">Men Clothings</a></h2>
 							</div>
 						</div>
 						<div class="category-wrap ftco-animate img d-flex align-items-end"
 							style="background-image: url(vegefoods/images/contents/4.jpg);">
 							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Women Clothings</a></h2>
+								<h2 class="mb-0"><a href="shop">Women Clothings</a></h2>
 							</div>
 						</div>
 					</div>
@@ -115,13 +115,13 @@
 				<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end"
 					style="background-image: url(vegefoods/images/contents/5.jpg);">
 					<div class="text px-3 py-1">
-						<h2 class="mb-0"><a href="#">Accessories</a></h2>
+						<h2 class="mb-0"><a href="shop">Accessories</a></h2>
 					</div>
 				</div>
 				<div class="category-wrap ftco-animate img d-flex align-items-end"
 					style="background-image: url(vegefoods/images/contents/6.jpg);">
 					<div class="text px-3 py-1">
-						<h2 class="mb-0"><a href="#">Handicraft</a></h2>
+						<h2 class="mb-0"><a href="shop">Handicraft</a></h2>
 					</div>
 				</div>
 			</div>
@@ -133,7 +133,7 @@
 	<div class="container">
 		<div class="row justify-content-center mb-3 pb-3">
 			<div class="col-md-12 heading-section text-center ftco-animate">
-				<span class="subheading">Handicraft</span>
+				<span class="subheading">We Provide</span>
 				<h2 class="mb-4">Our Products</h2>
 			</div>
 		</div>

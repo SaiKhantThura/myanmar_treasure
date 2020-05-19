@@ -34,7 +34,7 @@
 <body>
 
     <div class="login">
-    <div class="container mt--8 pb-5">
+    <div class="container mt--8 pb-5 logform">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-white shadow border-0">
@@ -52,7 +52,7 @@
                             </a>
                         </div> -->
                     </div>
-                    <div class="card-body px-lg-5 py-lg-5">
+                    <div class="card-body px-lg-5 py-lg-5 ">
                         <div class="text-center text-muted mb-4">
                             <small>
                                 <a href="{{ route('register') }}">{{ __('Create new account') }}</a> {{ __('OR Sign in with these credentials:') }}

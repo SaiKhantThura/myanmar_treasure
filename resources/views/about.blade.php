@@ -54,7 +54,7 @@
 </section>
 
 <section class="ftco-section ftco-counter img" id="section-counter"
-    style="background-image: url(vegefoods/images/bg_3.jpg);">
+    style="background-image: url(vegefoods/images/aboutbg.jpeg);">
     <div class="container">
         <div class="row justify-content-center py-5">
             <div class="col-md-10">
@@ -62,7 +62,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="1">0</strong>
+                                <strong class="number" data-number="356">0</strong>
                                 <span>Happy Customers</span>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                     <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                             <div class="text">
-                                <strong class="number" data-number="1">0</strong>
+                                <strong class="number" data-number="2">0</strong>
                                 <span>Partner</span>
                             </div>
                         </div>
@@ -208,7 +208,7 @@
                     </div>
                     <div class="media-body">
                         <h3 class="heading">Superior Quality</h3>
-                        <span>Quality Products</span>
+                        <span>Quality </span>
                     </div>
                 </div>
             </div>

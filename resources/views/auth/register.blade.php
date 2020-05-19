@@ -33,7 +33,7 @@
 </head>
 <body>
 <div class="login">
-<div class="container mt--8 pb-5">
+<div class="container mt--8 pb-5 logform">
         <!-- Table -->
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
