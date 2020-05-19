@@ -28,12 +28,12 @@
                     </div>
                 </div>
                 <div class="pb-md-5">
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                        live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.</p>
-                    <p>But nothing the copy said could convince her and so it didn’t take long until a few insidious
-                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
-                        agency, where they abused her for their.</p>
+                    <p>
+                    Welcome from the Myanmar Treasure website. On this website, it mainly sells traditional products of Bagan from Myanmar and if you love traditional products, you can buy and search in this Myanmar Treasure. And also they sell Myanmar pasoe(Men wear), Longyi(Women wear) and Myanmar Accessories. Myanmar food, Hotels, interesting places and things to do are provided for information only. Thus, if you are going to visit Bagan, you can find the information about Bagan.
+                    </p>
+                    <p>
+                    Bagan is an ancient city of Myanmar and is full of pagodas and it is now one of the most visited tourist destinations. So, I would like to invite you to visit Bagan.
+                    </p>
                     <p><a href="shop" class="btn btn-primary">Shop now</a></p>
                 </div>
             </div>
