@@ -31,73 +31,15 @@
 	<link rel="stylesheet" href="{{ asset('vegefoods') }}/css/icomoon.css">
 	<link rel="stylesheet" href="{{ asset('vegefoods') }}/css/style.css">
 	<link rel="stylesheet" href="{{ asset('vegefoods') }}/css/custom.css">
+
+	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-messaging.js"></script>
 </head>
 
 <body class="goto-here">
 	<!-- Nav -->
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<!-- <div class="container-fluid">
-			<div class="row align-items-center no-gutters">
-				<div class="col-xl-2 col-lg-2 logo">
-					<a class="navbar-brand" href="/">Myanmar Treasure</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-						aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="oi oi-menu"></span> Menu
-					</button>
-				</div>
-				<div class="col-xl-5 col-lg-7">
-					<div class="collapse navbar-collapse links" id="ftco-nav">
-						<ul class="navbar-nav ml-auto">
-							<li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-							<li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
-							<li class="nav-item"><a href="{{url('shop')}}" class="nav-link">Shop</a></li>
-							<li class="nav-item"><a href="{{url('blog')}}" class="nav-link">Blog</a></li>
-							<li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
-							
-						</ul>
-					</div>
-				</div>
-				<div class="col-xl-5 col-lg-5 d-none d-lg-block">
-					<div class="collapse navbar-collapse account" id="ftco-nav">
-						<ul class="navbar-nav ml-auto">
-							<li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span
-										class="icon-shopping_cart"></span>[<span id="cartCount"></span>]</a></li>
-							<li class="nav-item cta cta-colored"><a href="{{url('wishlist')}}" class="nav-link"><span
-								class="ion-ios-heart"></span>[<span id="cartCount"></span>]</a></li>
-							@if (Auth::guest())
-							<li class="nav-item"><a href="{{url('login')}}" class="nav-link">Login</a></li>
-							<li class="nav-item"><a href="{{url('register')}}" class="nav-link">Register</a></li>
-							@else
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle text-center" href="#" id="profile" data-toggle="dropdown"
-									aria-haspopup="true" aria-expanded="false">{{auth()->user()->name}}</a>
-								<div class="dropdown-menu" aria-labelledby="profile">
-									<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-									document.getElementById('logout-form').submit();">
-										{{ __('Logout') }}
-									</a>
-								</div>
-							</li>
-							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-								@csrf
-							</form>
-							@endif
-						</ul>
-					</div>
-				</div>
-			</div>
-			
-
-			
-				
-					
-
-					
-					
-
-				</ul>
-			</div>
-		</div> -->
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/">Myanmar Treasure</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -266,6 +208,65 @@
 	<script src="{{ asset('vegefoods') }}/js/scrollax.min.js"></script>
 	<script src="{{ asset('vegefoods') }}/js/main.js"></script>
 	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="{{ asset('argon') }}/js/bootstrap-notify.js"></script>
+	<script src="{{ asset('argon') }}/js/custom.js"></script>
+
+	<script>
+        $(document).ready(function(){
+            const config = {
+                apiKey: "AIzaSyAt17cRDm6O0jBr5_AWwKVOKxkqu5Cd5-U",
+				authDomain: "shwepalin-25d94.firebaseapp.com",
+				databaseURL: "https://shwepalin-25d94.firebaseio.com",
+				projectId: "shwepalin-25d94",
+				storageBucket: "shwepalin-25d94.appspot.com",
+				messagingSenderId: "509437086415",
+				appId: "1:509437086415:web:8319facfece4ae53a085ba",
+				measurementId: "G-DYNG3B76ZN"
+            };
+            firebase.initializeApp(config);
+            const messaging = firebase.messaging();
+            messaging
+                .requestPermission()
+                .then(function () {
+                    return messaging.getToken()
+                })
+                .then(function(token) {
+                    $.ajax({
+                        url: '{{ URL::to('/save-device-token') }}',
+                        type: 'POST',
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            user_id: {!! json_encode($user_id ?? '') !!},
+                            fcm_token: token
+                        },
+                        dataType: 'JSON',
+                        success: function (response) {
+                            console.log(response)
+                        },
+                        error: function (err) {
+                            console.log(" Can't do because: " + err);
+                        },
+                    });
+                })
+                .catch(function (err) {
+                    console.log("Unable to get permission to notify.", err);
+                });
+        
+            messaging.onMessage(function(payload) {
+                console.log('got it');
+                console.log(payload);
+                const noteTitle = payload.notification.title;
+                const noteOptions = {
+                    body: payload.notification.body,
+                    icon: payload.notification.icon,
+                    click_action: payload.notification.click_action
+                };
+                myNoti.showNotification('top','right',noteOptions);
+                
+                // new Notification(noteTitle, noteOptions);
+            });
+        });
+    </script>
 
 	@stack('js')
 </body>

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FrontendController@index')->name('index');
+Route::POST('/save-device-token', 'UserController@saveToken');
 Route::get('about', 'FrontendController@about');
 Route::get('contact', 'FrontendController@contact');
 

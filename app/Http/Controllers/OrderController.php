@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use App\Firebase\SendNotification;
 
 class OrderController extends Controller
 {
@@ -109,8 +110,10 @@ class OrderController extends Controller
 
     public function accepted(Order $order){
         $order->status = 'accepted';
-        $order->save();
-
+        // $order->save();
+        $noti = new SendNotification();
+        $message = "Your order had been accpted !";
+        $noti->SentNotiToCustomer($order->user,$message);
         return redirect()->back();
     }
 }

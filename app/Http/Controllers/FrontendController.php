@@ -10,10 +10,14 @@ use App\Blog;
 use App\Order;
 use App\Feedback;
 use Illuminate\Support\Facades\DB;
+use App\Firebase\SendNotification;
 class FrontendController extends Controller
 {
     public function index()
     {
+        $noti = new SendNotification();
+        // $customer = '';
+        // dd($noti->SentNotiToAdmin($customer));
         return view('welcome');
     }
     public function ramdomProducts(){
