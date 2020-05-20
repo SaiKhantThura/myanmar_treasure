@@ -46,7 +46,7 @@
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->category_name}}</td>
                                 <td>{{$product->description}}</td>
-                                <td>{{$product->price}}</td>
+                                <td>{{$product->price}} MMKs</td>
                                 <td class="text-right">
                                     <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('products.edit',$product->id)}}">
                                         <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>     

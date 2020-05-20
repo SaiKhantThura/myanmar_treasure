@@ -40,8 +40,12 @@
 
                                 <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-price">{{ __('Price') }}</label>
-                                    <input type="number" name="price" id="input-price" class="form-control form-control-alternative{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('price') }}" required autofocus>
-
+                                    <div class="input-group mb-2">
+                                        <input type="number" name="price" id="input-price" class="form-control form-control-alternative{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('Price') }}" value="{{ old('price') }}" required autofocus>
+                                        <div class="input-group-prepend">
+                                            <div class="form-control">MMks</div>
+                                        </div>
+                                    </div>
                                     @if ($errors->has('price'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('price') }}</strong>

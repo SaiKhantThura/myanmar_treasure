@@ -61,7 +61,7 @@
                                                 rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon"
                                                 onclick="return confirm('Are You Confirm')"
                                             >
-                                            <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>
+                                            <span class="btn-inner--icon"><i class="ni ni-fat-remove"></i></span>
                                             </button>
                                     </form>
 
