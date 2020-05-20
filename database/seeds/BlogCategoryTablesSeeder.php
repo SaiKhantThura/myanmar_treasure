@@ -19,11 +19,21 @@ class BlogCategoryTablesSeeder extends Seeder
                 "name"=> 'Hotels',
             ],
             [
-                "name"=> 'Traditional Curry',
+                "name"=> 'Burmese Traditional Curry',
+            ],
+            [
+                "name"=> 'Noodles',
             ],
             [
                 "name"=> 'Myanmar Snacks',
             ],
+            [
+                "name"=> 'Drinks',
+            ],
+            [
+                "name"=> 'Desserts',
+            ],
+            
         ]);
     }
 }
