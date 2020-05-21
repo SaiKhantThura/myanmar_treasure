@@ -84,6 +84,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user.index') }}">
+                        <i class="ni ni-single-copy-04 text-primary"></i> {{ __('Users') }}
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('BlogCategories.index') }}">
                         <i class="ni ni-single-copy-04 text-primary"></i> {{ __('Blog Categories') }}
                     </a>
