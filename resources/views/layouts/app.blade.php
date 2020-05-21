@@ -57,17 +57,18 @@
         $(document).ready(function(){
             console.log('hi')
             const config = {
-                apiKey: "AIzaSyCqgsY89aHj-HId7eY7zZ7pFi4q-iOn8Dc",
-                authDomain: "myanmar-treasure-4738b.firebaseapp.com",
-                databaseURL: "https://myanmar-treasure-4738b.firebaseio.com",
-                projectId: "myanmar-treasure-4738b",
-                storageBucket: "myanmar-treasure-4738b.appspot.com",
-                messagingSenderId: "831127853700",
-                appId: "1:831127853700:web:10b1d693217b727e0bc0d1"
+                apiKey: "AIzaSyC5DijeKNy3wICKc3wZpeAIrxdFt5gftvQ",
+                authDomain: "myanmar-treasure-3e59d.firebaseapp.com",
+                databaseURL: "https://myanmar-treasure-3e59d.firebaseio.com",
+                projectId: "myanmar-treasure-3e59d",
+                storageBucket: "myanmar-treasure-3e59d.appspot.com",
+                messagingSenderId: "482515719435",
+                appId: "1:482515719435:web:7d1ad8706fa1c802a03e0e",
+                measurementId: "G-15J52S4WHT"
             };
             firebase.initializeApp(config);
             const messaging = firebase.messaging();
-            messaging.usePublicVapidKey("BDL_4waoMFEBO-xLK88a07zRne-bDiqhNu_jJXYs2rvdgVvbGrTCANwuIuz6ytQOIh_8OXuwv6k0pBAO9alm3S4");
+            messaging.usePublicVapidKey("BAuwFm-bNJS5T54CHC2vXKVzh0Ekw9zeBu7-UUMPBFPawY1lrQEnqHzE8sbg80fHBJJgevy61Jz3kaGHLhOHAHE");
 
             messaging
                 .requestPermission()

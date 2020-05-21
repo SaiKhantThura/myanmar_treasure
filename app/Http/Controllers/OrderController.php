@@ -116,7 +116,9 @@ class OrderController extends Controller
         $order->save();
         $noti = new SendNotification();
         $message = "Your order had been accpted !";
-        $noti->SentNotiToCustomer($order->user,$message);
+        if($order->user_id){
+            $noti->SentNotiToCustomer($order->user,$message);
+        }
         return redirect()->back();
     }
 }
