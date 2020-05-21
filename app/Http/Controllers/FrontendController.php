@@ -15,8 +15,6 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $noti = new SendNotification();
-        $message = "Your got a new Order From ";
         return view('welcome');
     }
     public function receipt(Request $request)
@@ -28,10 +26,12 @@ class FrontendController extends Controller
     {
         return view('about');
     }
+
     public function contact()
     {
         return view('contact');
     }
+
     public function blog()
     {
         $all_blogs=Blog::all();

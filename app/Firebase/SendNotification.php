@@ -23,7 +23,7 @@ class SendNotification
                 ],
         ];
         $dataString = json_encode($data);
-  
+
         $headers = [
             'Authorization: key=' . $this->serverKey,
             'Content-Type: application/json',
@@ -42,17 +42,16 @@ class SendNotification
     public function SentNotiToAdmin($message){
         $user = User::find(1);
         $data = [
+            "to" => $user->device_token,
             "notification" =>
                 [
-                    "to" => $user->device_token,
                     "title" => 'Reserve',
                     "body" => $message,
                     "icon" => url('/logo.png'),
-                    "click_action"=> '/orders',
                 ],
         ];
         $dataString = json_encode($data);
-  
+
         $headers = [
             'Authorization: key=' . $this->serverKey,
             'Content-Type: application/json',
@@ -65,6 +64,8 @@ class SendNotification
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
+  
         curl_exec($ch);
+
     }
 }

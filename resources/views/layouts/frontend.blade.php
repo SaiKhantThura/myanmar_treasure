@@ -7,6 +7,9 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<link rel="manifest" href="/manifest.json">
+
+
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
 		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -214,17 +217,18 @@
 	<script>
         $(document).ready(function(){
             const config = {
-                apiKey: "AIzaSyAt17cRDm6O0jBr5_AWwKVOKxkqu5Cd5-U",
-				authDomain: "shwepalin-25d94.firebaseapp.com",
-				databaseURL: "https://shwepalin-25d94.firebaseio.com",
-				projectId: "shwepalin-25d94",
-				storageBucket: "shwepalin-25d94.appspot.com",
-				messagingSenderId: "509437086415",
-				appId: "1:509437086415:web:8319facfece4ae53a085ba",
-				measurementId: "G-DYNG3B76ZN"
+                apiKey: "AIzaSyCqgsY89aHj-HId7eY7zZ7pFi4q-iOn8Dc",
+				authDomain: "myanmar-treasure-4738b.firebaseapp.com",
+				databaseURL: "https://myanmar-treasure-4738b.firebaseio.com",
+				projectId: "myanmar-treasure-4738b",
+				storageBucket: "myanmar-treasure-4738b.appspot.com",
+				messagingSenderId: "831127853700",
+				appId: "1:831127853700:web:10b1d693217b727e0bc0d1"
             };
             firebase.initializeApp(config);
-            const messaging = firebase.messaging();
+			const messaging = firebase.messaging();
+            messaging.usePublicVapidKey("BDL_4waoMFEBO-xLK88a07zRne-bDiqhNu_jJXYs2rvdgVvbGrTCANwuIuz6ytQOIh_8OXuwv6k0pBAO9alm3S4");
+			
             messaging
                 .requestPermission()
                 .then(function () {

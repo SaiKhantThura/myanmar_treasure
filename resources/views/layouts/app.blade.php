@@ -8,6 +8,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Admin</title>
+
+        <link rel="manifest" href="/manifest.json">
+
         <!-- Favicon -->
         <link href="{{ asset('argon') }}/img/brand/favicona.png" rel="icon" type="image/png">
         <!-- Fonts -->
@@ -21,7 +24,7 @@
         <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-messaging.js"></script>
-        
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -50,21 +53,22 @@
         
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
-
         <script>
         $(document).ready(function(){
+            console.log('hi')
             const config = {
-                apiKey: "AIzaSyAt17cRDm6O0jBr5_AWwKVOKxkqu5Cd5-U",
-				authDomain: "shwepalin-25d94.firebaseapp.com",
-				databaseURL: "https://shwepalin-25d94.firebaseio.com",
-				projectId: "shwepalin-25d94",
-				storageBucket: "shwepalin-25d94.appspot.com",
-				messagingSenderId: "509437086415",
-				appId: "1:509437086415:web:8319facfece4ae53a085ba",
-				measurementId: "G-DYNG3B76ZN"
+                apiKey: "AIzaSyCqgsY89aHj-HId7eY7zZ7pFi4q-iOn8Dc",
+                authDomain: "myanmar-treasure-4738b.firebaseapp.com",
+                databaseURL: "https://myanmar-treasure-4738b.firebaseio.com",
+                projectId: "myanmar-treasure-4738b",
+                storageBucket: "myanmar-treasure-4738b.appspot.com",
+                messagingSenderId: "831127853700",
+                appId: "1:831127853700:web:10b1d693217b727e0bc0d1"
             };
             firebase.initializeApp(config);
             const messaging = firebase.messaging();
+            messaging.usePublicVapidKey("BDL_4waoMFEBO-xLK88a07zRne-bDiqhNu_jJXYs2rvdgVvbGrTCANwuIuz6ytQOIh_8OXuwv6k0pBAO9alm3S4");
+
             messaging
                 .requestPermission()
                 .then(function () {
@@ -91,6 +95,7 @@
                 .catch(function (err) {
                     console.log("Unable to get permission to notify.", err);
                 });
+                
         
             messaging.onMessage(function(payload) {
                 console.log('got it');
@@ -105,6 +110,7 @@
                 
                 // new Notification(noteTitle, noteOptions);
             });
+
         });
     </script>
     </body>

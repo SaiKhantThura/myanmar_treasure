@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->integer('subtotal');
             $table->integer('total');
+            $table->string('status')->default('new');
             $table->timestamps();
         });
     }
