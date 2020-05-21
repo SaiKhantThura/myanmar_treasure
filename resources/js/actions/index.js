@@ -51,8 +51,15 @@ export const incrementQty = (product,qty) => (dispatch) => {
 
 }
 export const QtyChange = (product,qty) => (dispatch) => {
-    dispatch(addToCartUnsafe(product, qty))
+    dispatch(changeQtyUnsafe(product, qty))
 }
+
+export const changeQtyUnsafe = (product, qty) => ({
+    type: types.QTY_CHANGE,
+    product,
+    qty
+});
+
 export const decrementQty = productId => (dispatch) => {
     toast.warn("Item Decrement Qty to Cart",{
         position: "bottom-right",
