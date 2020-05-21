@@ -6,7 +6,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <a class="navbar-brand" href="{{ route('home') }}" style="color: #b38867; font-weight: 800; font-size:18px;text-transform: uppercase;">Myanmar Treasure</a>
+            <a class="navbar-brand" href="{{ route('home') }}" style="color: #b38867; font-weight: 800; font-size:18px;text-transform: uppercase;">Myanmar-Treasure</a>
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">

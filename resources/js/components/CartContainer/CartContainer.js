@@ -10,12 +10,15 @@ class CartContainer extends Component {
         }
     }
     handleQtyInput = (e,product,index) => {
+        console.log('change')
         console.log(e.target.value);
         console.log(product);
-        var Qtys = this.state.Qtys
-        Qtys[index] = e.target.value;
-        this.props.QtyChange(product,e.target.value);
-        this.setState({Qtys});
+        if(e.target.value>0){
+            var Qtys = this.state.Qtys
+            Qtys[index] = e.target.value;
+            this.props.QtyChange(product,e.target.value);
+            this.setState({Qtys});
+        }
     };
     componentDidMount() {
         console.log('rendeer')

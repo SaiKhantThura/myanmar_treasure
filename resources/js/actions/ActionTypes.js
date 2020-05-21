@@ -38,4 +38,5 @@ export const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS'
 export const CHECKOUT_FAILURE = 'CHECKOUT_FAILURE'
 
 export const CLEAR_CART = 'CLEAR_CART'
+export const QTY_CHANGE = 'QTY_CHANGE'
 

@@ -66,6 +66,5 @@ class SendNotification
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
         curl_exec($ch);
-        dd($ch);
     }
 }
