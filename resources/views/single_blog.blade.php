@@ -2,7 +2,7 @@
 
 <!-- slider_area_start  -->
 @section('slider_area')
-<div class="hero-wrap hero-bread" style="background-image: url('vegefoods/images/Blog.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('/vegefoods/images/Blog.jpg');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
@@ -38,11 +38,10 @@
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading">Categories</h3>
                     <ul class="categories">
-                        <li><a href="#">Things to do</a></li>
-                        <li><a href="#">Hotels</a></li>
-                        <li><a href="#">Traditional Curry </a></li>
-                        <li><a href="#">Myanmar Snacks </a></li>
-                        <li><a href="#">Drinks </a></li>
+                            <li><a href="{{route('blog')}}">All[{{count($all_blogs)}}]</a></li>
+                        @foreach($blog_categories as $category)
+                            <li><a href="{{route('blog_with_category',$category->id)}}">{{$category->name}} [{{count($category->blogs)}}]</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

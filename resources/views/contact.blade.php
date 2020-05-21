@@ -44,18 +44,21 @@
         </div>
         <div class="row block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="{{ route('feedbacks.store') }}" method="post" class="bg-white p-5 contact-form" autocomplete="off"  enctype="multipart/form-data">
+            <form action="{{ route('feedback.store') }}" method="post" class="bg-white p-5 contact-form" autocomplete="off"  enctype="multipart/form-data">
             @csrf
             @method('post')
                 <h2>Feedback Form</h2>
-                @if (session('status'))
-                  <div class="alert alert-success alert-dismissible fade show" role="alert">
-                      {{ session('status') }}
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-              @endif 
+
+                @if (session($key ?? 'status'))
+                <div>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session($key ?? 'status') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                @endif
               
               <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                 <input type="text" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{old('name')}}" placeholder="Your Name" name="name">

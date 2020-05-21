@@ -150,22 +150,88 @@ class BlogSeeder extends Seeder
 
 
             [
+                "title"=> 'Mon-hin-gar',
+                "description"=> "A rice noodle soup, locally called Monhingar, is the first choice, which is so delicious as it contains verities of ingredients, such as fish, chip pea, lemon grass, ginger, garlic, etc.; a healthy food. Almost of Myanmar people like it.",
+                "image"=> '/vegefoods/images/productss/Myamar-food/Noodles/mote-hin-kha/Mote-hnin-Kyar1.jpg',
+                "blog_category_id"=> '4',
+            ],
+            [
+                "title"=> 'Nan-gyi-thoke',
+                "description"=> 'Nan Gyi Thoke is a Burmese cuisine made with thick round rice noodles aka Nan Gyi noodles mixed with specifically prepared chicken curry. The name “Nan Gyi” refers to the round thick rice noodles while "Thoke" means salad. The dish is usually served with pre-made chicken curry (note: the chicken curry is usually the Burmese style curry, not Indian) or either with boiled eggs cut in slices, onions, coriander, slice of lime, chili powder and with crispy fritters.',
+                "image"=> '/vegefoods/images/productss/Myamar-food/Noodles/nan-gyi-toke/nan-gyi-toke.jpg',
+                "blog_category_id"=> '4',
+            ],
+            [
+                "title"=> 'Coconut Noodle',
+                "description"=> "Ohn No Khauk Swe is a Burmese noodle dish with a spiced chicken coconut broth. This is a great curry for those who don’t like a lot of heat. I was able to keep it lighter for myself and topped Chad’s with the red chili powder to his taste. This recipe uses thin egg noodles, but I have seen others with rice noodles.
+                ",
+                "image"=> '/vegefoods/images/productss/Myamar-food/Noodles/coconut-noodles/coconut-noodles.jpg',
+                "blog_category_id"=> '4',
+            ],
+
+
+            [
                 "title"=> 'A Kyaw Sone',
                 "description"=> "These deep-fried snacks consist of leafy vegetables, onions, sweet potatoes, tofu and mock meat, served with a sweet and tangy sauce. It was a wonderful contrast of earthy, crisp and chewy.",
                 "image"=> '/vegefoods/images/productss/Myamar-food/Snacks/a -kyaw-sone/akyaw 4.jpg',
-                "blog_category_id"=> '4',
+                "blog_category_id"=> '5',
             ],
             [
                 "title"=> 'Tea-Leaf-Salad',
                 "description"=> "Lahpet is so important to the culture that when tea leaves are harvested, the best of the crop is set aside for fermenting, while the rest is dried and processed for drinking tea. The freshly harvested tea leaves are briefly steamed, then packed into bamboo vats and set in pits, pressed by heavy weights to encourage fermentation.",
                 "image"=> '/vegefoods/images/productss/Myamar-food/Snacks/la-phat-toke/the-infamous-tea-leaf.jpg',
-                "blog_category_id"=> '4',
+                "blog_category_id"=> '5',
             ],
             [
                 "title"=> 'Mote-Lin-Mayar',
                 "description"=> "Roughly translated as “husband and wife snacks,” these tiny bites are a visual delight. Dollops of rice flour batter are put in a large sizzling cast iron pan that resembles a muffin tin. Toppings such as quail eggs, scallions, or roasted chickpeas are added to half of the dollops, and then, like a husband and wife, the two halves are joined to make a little round cake. The quail egg versions are the perfect breakfast food, like eating half a dozen mini egg McMuffins.",
                 "image"=> '/vegefoods/images/productss/Myamar-food/Snacks/Mote-Lin-Mayar/Mote-Lin-Mayar.jpg',
-                "blog_category_id"=> '4',
+                "blog_category_id"=> '5',
+            ],
+
+
+            [
+                "title"=> 'Myanmar Tea',
+                "description"=> "If you ever go to Myanmar, one of the first things that you'll notice that every town, and usually every block in every town has a tea shop at it. 
+                Tea is a part of Myanmar culture and important in daily life. Myanmar is one of the countries that cultivate best tea in the world. Most of the Myanmar people enjoy a cup of tea for their morning breakfast. Tea shop will be full with many visitors, lively and noisy in the morning. Of course, for most people who are crammed in a small house with every other member of their family, tea shop is not only to have a cup of tea but also a place to gather outside of home and chat or just hang out.
+                ",
+                "image"=> '/vegefoods/images/productss/Myamar-food/Drinks/myanmar-tea/tea_0.jpg',
+                "blog_category_id"=> '6',
+            ],
+            [
+                "title"=> 'Htan-Yay',
+                "description"=> "Bagan is surrounded by the forests of Wine Trees and there are many palm wines shops around Bagan. During your visit to Bagan, you should try the nutritional, traditional, medical and natural beverage palm wine also known as Htan yay.",
+                "image"=> '/vegefoods/images/productss/Myamar-food/Drinks/htan-yay/02_2.jpg',
+                "blog_category_id"=> '6',
+            ],
+            [
+                "title"=> 'Palaung Pickled Tea',
+                "description"=> "The chief crop of cultivation among the Palaung is tea. The tea shrub is indigenous to areas where they live and grows wild all over the hills while tea cultivation is closely associated with Tawngpang. Tea is abundant in places like Mong Long, Mong Mit, Mong Khe, Panglong and in the Petkang areas of Keng Tung State. Tea likes a high latitude, shade and dampness. Tawngpang is the most suitable place with such conditions.",
+                "image"=> '/vegefoods/images/productss/Myamar-food/Drinks/green tea/tea.jpg',
+                "blog_category_id"=> '6',
+            ],
+
+
+            [
+                "title"=> 'Shwe Yin Aye',
+                "description"=> "Shwe yin aye is a traditional Burmese cold dessert, meaning golden heart cooler, hinting at its refreshing nature. Sweet, creamy, and rich, this specialty is made by combining steamed sticky rice, sago or tapioca pearls, tapioca sticks.
+                ",
+                "image"=> '/vegefoods/images/productss/Myamar-food/Dessert/shwe-yin-aye/shwe-yin-aye.jpg',
+                "blog_category_id"=> '7',
+            ],
+            [
+                "title"=> 'Mont Lat Saung',
+                "description"=> "Mont Lat Saung is one of the favorite Thingyan desserts and only has rice drops with coconut milk or jaggery caramel sauce, and no bread or sticky rice. Traditionally, serve in Thingyan Festival and you will also find in every street corner vendor in during summer season.",
+                "image"=> '/vegefoods/images/productss/Myamar-food/Dessert/mote-lat-saung/mote-lat-saung.jpg',
+                "blog_category_id"=> '7',
+            ],
+            [
+                "title"=> 'Mont Lone Yay Paw',
+                "description"=> "Mont lone yay paw, meaning round snack on the water, is a traditional Burmese sweet snack made by combining glutinous rice flour, rice flour, water, and salt. The combination is shaped into smooth balls, which are then typically filled with palm jaggery or palm sugar.
+                This sweet derives its name from the tendency of the rice balls to float to the surface of the boiling water or coconut milk in which they’re being cooked once they’re done. Shredded or desiccated coconut is often sprinkled over the rice dumplings, and they’re usually served on a banana leaf while still warm.
+                ",
+                "image"=> '/vegefoods/images/productss/Myamar-food/Dessert/mote-lone-yay-paw/mote-lone-yay-paw.jpg',
+                "blog_category_id"=> '7',
             ],
             
         ]);

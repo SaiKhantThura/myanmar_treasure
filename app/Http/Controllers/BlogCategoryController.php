@@ -37,7 +37,7 @@ class BlogCategoryController extends Controller
     public function store(Request $request)
     {
         BlogCategory::create($this->validatedData());
-        return redirect()->route('blogcaregories.index')->withStatus(__('New Blog category created !'));
+        return redirect()->route('BlogCategories.index')->withStatus(__('New Blog category created !'));
     }
 
     /**
@@ -46,7 +46,7 @@ class BlogCategoryController extends Controller
      * @param  \App\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(BlogCategory $blogCategory)
+    public function show(BlogCategory $BlogCategory)
     {
         //
     }
@@ -57,10 +57,9 @@ class BlogCategoryController extends Controller
      * @param  \App\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(BlogCategory $blogCategory)
+    public function edit(BlogCategory $BlogCategory)
     {
-        $bc = BlogCategory::find($id);
-        return view('blog_categories.edit',compact('bc'));
+        return view('blog_categories.edit',compact('BlogCategory'));
     }
 
     /**
@@ -70,13 +69,12 @@ class BlogCategoryController extends Controller
      * @param  \App\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogCategory $blogCategory)
+    public function update(Request $request, BlogCategory $BlogCategory)
     {
         $this->validatedData();
-        $bc = BlogCategory::Find($id);
-        $bc->name = request("name");
-        $bc->save();
-        return redirect()->route('blogcaregories.index');
+        $BlogCategory->name = request("name");
+        $BlogCategory->save();
+        return redirect()->route('BlogCategories.index');
     }
 
     /**
@@ -85,11 +83,10 @@ class BlogCategoryController extends Controller
      * @param  \App\BlogCategory  $blogCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BlogCategory $blogCategory)
+    public function destroy(BlogCategory $BlogCategory)
     {
-        $bc = BlogCategory::Find($id);
-        $bc->delete();
-        return redirect()->route('blogcaregories.index');
+        $BlogCategory->delete();
+        return redirect()->route('BlogCategories.index');
     }
 
     public function validatedData()

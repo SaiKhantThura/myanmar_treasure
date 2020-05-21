@@ -4,6 +4,7 @@ import * as types from './ActionTypes'
 
 //it seems that I should probably use this as the basis for "Cart"
 export const addToCart = (product,qty) => (dispatch) => {
+    console.log('hi');
     toast.success("Item Added to Cart",{
         position: "bottom-right",
         autoClose: 2000,
@@ -12,7 +13,7 @@ export const addToCart = (product,qty) => (dispatch) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+    });
         dispatch(addToCartUnsafe(product, qty))
 
 }
@@ -30,7 +31,7 @@ export const removeFromCart = product_id => (dispatch) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+    });
     dispatch({
         type: types.REMOVE_FROM_CART,
         product_id
@@ -45,7 +46,7 @@ export const incrementQty = (product,qty) => (dispatch) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+    });
     dispatch(addToCartUnsafe(product, qty))
 
 }
@@ -61,7 +62,7 @@ export const decrementQty = productId => (dispatch) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+    });
 
     dispatch({
     type: types.DECREMENT_QTY,
@@ -99,7 +100,7 @@ export const addToCartAndRemoveWishlist = (product,qty) => (dispatch) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+    });
     dispatch(addToCartUnsafe(product, qty));
     dispatch(removeFromWishlist(product));
 }
@@ -114,7 +115,7 @@ export const addToWishlist = (product) => (dispatch) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+    });
     dispatch(addToWishlistUnsafe(product))
 
 }
@@ -131,7 +132,7 @@ export const removeFromWishlist = product_id => (dispatch) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+    });
     dispatch({
         type: types.REMOVE_FROM_WISHLIST,
         product_id

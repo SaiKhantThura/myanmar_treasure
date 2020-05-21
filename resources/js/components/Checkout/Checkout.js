@@ -161,9 +161,7 @@ class Checkout extends Component {
                                 <span>{this.props.total} MMK</span>
                             </p>
                             <hr/>
-                            <div className="order-btn">
-                                <a onClick={(e)=>this.handleSubmit(e)} className="btn btn-primary py-3 px-4">Place an order</a>   
-                            </div>
+                            <p><a onClick={(e)=>this.handleSubmit(e)} className="btn btn-primary py-3 px-4">Place an order</a></p>
                         </div>
 
                     </div>

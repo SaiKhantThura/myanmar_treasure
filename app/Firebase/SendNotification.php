@@ -39,15 +39,16 @@ class SendNotification
   
         curl_exec($ch);
     }
-    public function SentNotiToAdmin(){
+    public function SentNotiToAdmin($message){
         $user = User::find(1);
         $data = [
             "notification" =>
                 [
+                    "to" => $user->device_token,
                     "title" => 'Reserve',
-                    "body" => "You Got a new Order",
+                    "body" => $message,
                     "icon" => url('/logo.png'),
-                    "click_action"=> 'reservations',
+                    "click_action"=> '/orders',
                 ],
         ];
         $dataString = json_encode($data);
@@ -64,7 +65,7 @@ class SendNotification
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
-        dd($ch);
         curl_exec($ch);
+        dd($ch);
     }
 }

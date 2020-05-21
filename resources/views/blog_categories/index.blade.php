@@ -12,7 +12,7 @@
                             <h3 class="mb-0">Blog Categories</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{route('blogcaregories.create')}}" class="btn btn-sm btn-primary"
+                            <a href="{{route('BlogCategories.create')}}" class="btn btn-sm btn-primary"
                                 >Add</a
                             >
                         </div>
@@ -36,12 +36,12 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$bc->name}}</td>
                                 <td class="text-right">
-                                    <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('blogcaregories.edit',$bc->id)}}">
+                                    <a class="btn btn-icon btn-primary btn-sm" type="button" href="{{route('BlogCategories.edit',$bc->id)}}">
                                         <span class="btn-inner--icon"><i class="ni ni-settings-gear-65"></i></span>     
                                     </a>  
                                     <form
                                             method="POST"
-                                            action="{{route('blogcaregories.destroy',$bc->id)}}"
+                                            action="{{route('BlogCategories.destroy',$bc->id)}}"
                                             style="display: inline-block;"
                                         >
                                             @csrf @method('DELETE')

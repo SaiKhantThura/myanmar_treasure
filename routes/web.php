@@ -28,12 +28,11 @@ Route::get('checkout', 'FrontendController@checkout');
 Route::get('categories/all', 'FrontendController@getAllCategories');
 Route::get('/shop-products/{product}', 'FrontendController@getProductsDetails');
 Route::get('/shop-products', 'FrontendController@getProducts');
-Route::get('/ramdom-products', 'FrontendController@ramdomProducts');
+Route::put('/orders/{order}/accepted', 'OrderController@accepted')->name('order_accepted');
 
 
-Route::put('orders/{order}/accepted','OrderController@accepted')->name('order_accept');
 Route::resource('orders', 'OrderController');
-Route::resource('feedbacks', 'FeedbackController');
+Route::resource('feedback', 'FeedbackController');
 
 Route:: get('/receipt','FrontendController@receipt');
 Route:: get('/wishlist', function(){
@@ -51,10 +50,8 @@ Route::group(['middleware' => ['role:admin']], function () {
 	
 	Route::resource('categories', 'CategoryController');
 	Route::resource('products', 'ProductController');
-	Route::resource('blogcaregories', 'BlogCategoryController');
+	Route::resource('BlogCategories', 'BlogCategoryController');
 	Route::resource('blogs', 'BlogController');
-	Route::resource('feedback', 'FeedbackController');
-	
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 });
 

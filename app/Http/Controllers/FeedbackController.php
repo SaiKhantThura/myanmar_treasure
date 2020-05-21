@@ -85,7 +85,7 @@ class FeedbackController extends Controller
     {
         $feedback = Feedback::find($id);
         $feedback->delete();
-        return redirect()->route('feedback.index')->withStatus(__('Thanks for your feedback !'));
+        return redirect()->route('feedback.index')->withStatus(__('Your feedback has been sent'));
 
     }
     public function validatedData()

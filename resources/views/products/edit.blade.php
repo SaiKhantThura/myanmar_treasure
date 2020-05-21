@@ -4,7 +4,8 @@
     @include('layouts.headers.cards')
 <div class="container-fluid mt--7">
     <div class="row">
-            <div class="col-xl-8 order-xl-1">
+            <div class="col-xl-2"></div>
+            <div class="col-xl-8">
                 <div class="card bg-secondary shadow">
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
@@ -65,7 +66,7 @@
 
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Description') }}</label>
-                                    <textarea id="description" rows="3" name="description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" required autofocus> {{ old('description',$product->description) }} </textarea>
+                                    <textarea id="description" rows="3" name="description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ old('name',$product->description) }}" value="{{ old('name',$product->description) }}" required autofocus></textarea>
 
                                     @if ($errors->has('description'))
                                         <span class="invalid-feedback" role="alert">
@@ -93,6 +94,7 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xl-2"></div>
         </div>
     @include('layouts.footers.auth')
     </div>

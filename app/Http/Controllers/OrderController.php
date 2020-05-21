@@ -15,7 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::latest()->get();
+        $orders = Order::all();
         return view('orders.index',compact('orders'));
     }
 
@@ -50,7 +50,10 @@ class OrderController extends Controller
         }
         $order->save();
         $order->orderProducts()->createMany($request->cart);
-        
+        $noti = new SendNotification();
+        $message = "Your got a new Order From ".$order->name;
+        $noti->SentNotiToAdmin($message);
+
         return response()->json($order)->setStatusCode(201);
     }
 
@@ -110,7 +113,7 @@ class OrderController extends Controller
 
     public function accepted(Order $order){
         $order->status = 'accepted';
-        // $order->save();
+        $order->save();
         $noti = new SendNotification();
         $message = "Your order had been accpted !";
         $noti->SentNotiToCustomer($order->user,$message);

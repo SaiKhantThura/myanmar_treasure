@@ -16,13 +16,9 @@ class FrontendController extends Controller
     public function index()
     {
         $noti = new SendNotification();
-        // $customer = '';
-        // dd($noti->SentNotiToAdmin($customer));
+        $message = "Your got a new Order From ";
+       dd( $noti->SentNotiToAdmin($message));
         return view('welcome');
-    }
-    public function ramdomProducts(){
-        $products = Product::all()->random(8);
-        return response()->json($products);
     }
     public function receipt(Request $request)
     {
@@ -60,12 +56,14 @@ class FrontendController extends Controller
     }
     public function singleBlog($id)
     {
+        $all_blogs=Blog::all();
+        $blog_categories = BlogCategory::all();
         $blog = DB::table('blogs')
         ->join('blog_categories', 'blog_categories.id', '=', 'blogs.blog_category_id')
         ->select('blogs.*', 'blog_categories.name as name')
         ->where('blogs.id', '=' , $id)
         ->first();
-        return view('single_blog',compact('blog'));
+        return view('single_blog',compact('blog','blog_categories','all_blogs'));
     }
     public function shop()
     {

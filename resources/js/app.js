@@ -19,4 +19,3 @@ require('./components/Shop/index');
 require('./components/Checkout/Index');
 require('./components/WishListCount/Index')
 require('./components/WishListContainer/Index')
-require('./components/HomeProduct/index')

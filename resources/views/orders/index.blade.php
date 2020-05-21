@@ -25,12 +25,10 @@
                                 <th scope="col">Address</th>
                                 <th scope="col">phone</th>
                                 <th scope="col">Products</th>
-                                <th scope="col">subtotal</th>
-                                <th scope="col">shipping fees</th>
                                 <th scope="col">Total</th>
                                 <th scope="col">Time</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">stutus</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,26 +43,25 @@
                                         <span class="badge badge-pill badge-default">{{$orderProduct->product->name}} x {{$orderProduct->quantity}}</span>
                                     @endforeach
                                 </td>
-                                <td>{{$order->subtotal}}</td>
-                                <td>2000</td>
                                 <td>{{$order->total}}</td>
                                 <td><span class="badge badge-pill badge-default">{{$order->created_at->diffForHumans()}}</span></td>
-                                <td><span class="badge badge-pill badge-{{$order->status == 'new'?'warning' : 'success'}}">{{$order->status}}</span></td>
-                                <td class="text-right">
-                                    @if($order->status=='new')
+                                <td><span class="badge badge-pill badge-{{$order->status =='new'? 'default' : 'success'}}">{{$order->status}}</span></td>
+                                <td>
+                                    @if($order->status == 'new')
                                     <form
                                         method="POST"
-                                        action="{{route('order_accept',$order->id)}}"
+                                        action="{{route('order_accepted',$order->id)}}"
                                         style="display: inline-block;"
                                     >
+                                        @csrf @method('PUT')
+
                                         <button
                                             type="submit"
-                                            rel="tooltip" class="btn btn-primary btn-sm btn-round btn-icon"
+                                            rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon"
                                             onclick="return confirm('Are You Confirm')"
                                         >
-                                            <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>  
+                                        <i class="ni ni-check-bold"></i>
                                         </button>
-                                        @csrf @method('PUT')
                                     </form>
                                     @endif
                                 </td>
@@ -86,11 +83,3 @@
     @include('layouts.footers.auth')
     </div>
 @endsection
-
-@push('js')
-<script>
-    function Ago(time){
-       console.log(moment(time).fromNow);
-    }
-</script>
-@endpush

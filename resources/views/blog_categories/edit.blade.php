@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('blogcaregories.update',$bc->id) }}" autocomplete="off">
+                        <form method="post" action="{{ route('BlogCategories.update',$BlogCategory->id) }}" autocomplete="off">
                             @csrf
                             @method('put')
 
@@ -28,7 +28,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ old('name',$bc->name) }}" value="{{ old('name',$bc->name) }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ old('name',$BlogCategory->name) }}" value="{{ old('name',$BlogCategory->name) }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">

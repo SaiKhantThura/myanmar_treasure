@@ -84,18 +84,19 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('blogcaregories.index') }}">
+                    <a class="nav-link" href="{{ route('BlogCategories.index') }}">
                         <i class="ni ni-single-copy-04 text-primary"></i> {{ __('Blog Categories') }}
+                    </a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('categories.index') }}">
+                        <i class="ni ni-archive-2 text-primary"></i> {{ __('Product Categories') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('products.index') }}">
                         <i class="ni ni-archive-2 text-primary"></i> {{ __('Products') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('categories.index') }}">
-                        <i class="ni ni-archive-2 text-primary"></i> {{ __('Product Categories') }}
                     </a>
                 </li>
                 <li class="nav-item">
