@@ -17,7 +17,6 @@ class FrontendController extends Controller
     {
         $noti = new SendNotification();
         $message = "Your got a new Order From ";
-       dd( $noti->SentNotiToAdmin($message));
         return view('welcome');
     }
     public function receipt(Request $request)
