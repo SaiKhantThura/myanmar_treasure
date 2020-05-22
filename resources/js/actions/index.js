@@ -80,6 +80,11 @@ export const clearCart = () => (dispatch) => {
     type: types.CLEAR_CART
     })
 };
+export const clearWishlist = () => (dispatch) => {
+    dispatch({
+    type: types.CLEAR_WISHLIST
+    })
+};
 
 export const getCartSubTotal = cartItems => {
     var total = 0;

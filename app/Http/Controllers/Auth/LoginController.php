@@ -21,10 +21,14 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    // use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        logout as performLogout;
+    }
 
     protected function authenticated(Request $request, $user)
     {
+        $request->session()->put('auth', true);
         $user = Auth::user();
         if ( $user->hasAnyRole(['super-admin', 'admin']) ) {
             return redirect(RouteServiceProvider::HOME);
@@ -47,5 +51,13 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function logout(Request $request)
+    {
+        $this->performLogout($request);
+        $request->session()->put('auth', true);
+
+        return redirect()->route('index');
     }
 }

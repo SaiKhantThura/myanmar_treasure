@@ -40,17 +40,6 @@
                 <div class="card bg-white shadow border-0">
                     <div class="card-header bg-transparent pb-5">
                         <div class="text-center"><a class="navbar-brand " style="word-spacing: 10px;" href="/">Myanmar Treasure</a></div>
-                        
-                        <!-- <div class="btn-wrapper text-center">
-                            <a href="#" class="btn btn-neutral btn-icon">
-                                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/github.svg"></span>
-                                <span class="btn-inner--text">{{ __('Github') }}</span>
-                            </a>
-                            <a href="#" class="btn btn-neutral btn-icon">
-                                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/google.svg"></span>
-                                <span class="btn-inner--text">{{ __('Google') }}</span>
-                            </a>
-                        </div> -->
                     </div>
                     <div class="card-body px-lg-5 py-lg-5 ">
                         <div class="text-center text-muted mb-4">
@@ -99,20 +88,6 @@
                         </form>
                     </div>
                 </div>
-                <!-- <div class="row mt-3">
-                    <div class="col-6">
-                        @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}" class="text-light">
-                                <small>{{ __('Forgot password?') }}</small>
-                            </a>
-                        @endif
-                    </div>
-                    <div class="col-6 text-right">
-                        <a href="{{ route('register') }}" class="text-light">
-                            <small>{{ __('Create new account') }}</small>
-                        </a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontendController@index')->name('index');
 Route::POST('/save-device-token', 'UserController@saveToken');
+Route::get('/cleared', 'FrontendController@cleared');
 Route::get('about', 'FrontendController@about');
 Route::get('contact', 'FrontendController@contact');
 
@@ -28,6 +29,7 @@ Route::get('checkout', 'FrontendController@checkout');
 Route::get('categories/all', 'FrontendController@getAllCategories');
 Route::get('/shop-products/{product}', 'FrontendController@getProductsDetails');
 Route::get('/shop-products', 'FrontendController@getProducts');
+Route::get('/random-products', 'FrontendController@ramdomProduct');
 Route::put('/orders/{order}/accepted', 'OrderController@accepted')->name('order_accepted');
 
 

@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\DB;
 use App\Firebase\SendNotification;
 class FrontendController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('welcome');
+        $needToClear = $request->session()->get('auth');
+        return view('welcome',compact('needToClear'));
     }
     public function receipt(Request $request)
     {
@@ -25,6 +26,12 @@ class FrontendController extends Controller
     public function about()
     {
         return view('about');
+    }
+
+    public function cleared(Request $request)
+    {
+        $request->session()->put('auth', false);
+        return 'true';
     }
 
     public function contact()
@@ -104,7 +111,13 @@ class FrontendController extends Controller
     public function savingfeedback(Request $request)
     {    
         Feedback::create($this->feedbackValidatedData());
-        return redirect()->route('index')->withStatus(__('Your feedback had been received'));
+        return redirect()->route('index')->withStatus(__('Your feedback had been sent'));
+    
+    }
+    public function ramdomProduct(Request $request)
+    {    
+        $products = Product::all()->random(8);
+        return response()->json($products);
     
     }
     public function feedbackValidatedData()

@@ -19,6 +19,11 @@ function saveToLocalStorage(state) {
 function loadFromLocalStorage() {
     try {
         const serializedState = localStorage.getItem('state')
+        if(localStorage.getItem('isClear')==null){
+            localStorage.setItem('isClear',false)
+        }else{
+            localStorage.getItem('isClear') == localStorage.getItem('isClear');
+        }
         if(serializedState === null) return undefined
         return JSON.parse(serializedState)
     }catch (e) {

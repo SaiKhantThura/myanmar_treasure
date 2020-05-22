@@ -37,7 +37,7 @@ class FeedbackController extends Controller
     public function store(Request $request)
     {    
         Feedback::create($this->validatedData());
-        return redirect()->back()->withStatus(__('Your feedback had been received'));
+        return redirect()->back()->withStatus(__('Your feedback had been sent'));
     
     }
 

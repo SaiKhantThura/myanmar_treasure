@@ -1,11 +1,15 @@
 import {
-    ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST } from '../actions/ActionTypes';
+    ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST, CLEAR_WISHLIST } from '../actions/ActionTypes';
 
 
 export default function wishlistReducer(state = {
     list: []
 }, action) {
     switch (action.type) {
+        case CLEAR_WISHLIST:
+            return{
+                list:[]
+            }
         case ADD_TO_WISHLIST:
             const productId = action.product.id
             if (state.list.findIndex(product => product.id === productId) !== -1) {
